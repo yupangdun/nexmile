@@ -4,13 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import { Tabs, TabPane, Select, Option } from 'element-ui'
+import { Carousel, CarouselItem, Container, Header, Main, Footer, Input } from 'element-ui'
 
-Vue.component(Tabs.name, Tabs)
-Vue.component(TabPane.name, TabPane)
+Vue.component(Container.name, Container)
+Vue.component(Header.name, Header)
+Vue.component(Main.name, Main)
+Vue.component(Footer.name, Footer)
+Vue.component(Input.name, Input)
 
-Vue.component(Select.name, Select)
-Vue.component(Option.name, Option)
+Vue.component(Carousel.name, Carousel)
+Vue.component(CarouselItem.name, CarouselItem)
 
 Vue.config.productionTip = false
 

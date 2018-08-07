@@ -1,14 +1,32 @@
 <template>
   <div id="app">
-    <div style="display: flex;flex-direction: row;align-items: center; justify-content: center;">
-      <img style="width:100px;height: 100px;" src="./assets/logo.png" />
-      <c-tab :list="['产品解决方案', '应用案例', '资讯', '关于NEXMILE', '联系我们']" v-model="index" @click="click"></c-tab>
-    </div>
-    <el-select v-model="value" placeholder="请选择">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-      </el-option>
-    </el-select>
-    <router-view/>
+    <el-container>
+      <el-header height="500px">
+        <div style="height: 120px; display: flex;flex-direction: row;align-items: center; justify-content: center;">
+          <div style="flex: 1;display: flex; align-items: center; justify-content: center;">
+            <img style="width:80px;" src="./assets/logo.png" />
+          </div>
+          <div style="flex: 2; display: flex;align-items: center;justify-content: center;">
+            <c-tab :list="['产品解决方案', '应用案例', '资讯', '关于NEXMILE', '联系我们']" v-model="index" @click="click"></c-tab>
+            <div style="margin:0 40px;">中/EN</div>
+            <el-input placeholder="搜索" style="width: 180px;">
+              <i slot="prefix" class="el-input__icon el-icon-search"></i>
+            </el-input>
+          </div>
+        </div>
+        <el-carousel arrow="never" trigger="click">
+          <el-carousel-item v-for="(item,index) in bannerList" :key="index">
+            <img style="width: 100%;height: 100%;" :src="item.src" />
+          </el-carousel-item>
+        </el-carousel>
+      </el-header>
+      <el-main>
+        <router-view/>
+      </el-main>
+      <el-footer>
+
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
@@ -19,33 +37,60 @@ export default {
   components: { 'c-tab': Tab },
   data () {
     return {
-      options: [{
-        value: '选项1',
-        label: '黄金糕'
-      }, {
-        value: '选项2',
-        label: '双皮奶'
-      }, {
-        value: '选项3',
-        label: '蚵仔煎'
-      }, {
-        value: '选项4',
-        label: '龙须面'
-      }, {
-        value: '选项5',
-        label: '北京烤鸭'
-      }],
-      value: '',
-      index: 0
+      index: 0,
+      bannerList: [
+        {
+          src: require('./assets/banner/banner1.jpg'),
+          url: ''
+        },
+        {
+          src: require('./assets/banner/banner2.jpg'),
+          url: ''
+        },
+        {
+          src: require('./assets/banner/banner3.jpg'),
+          url: ''
+        },
+        {
+          src: require('./assets/banner/banner4.jpg'),
+          url: ''
+        },
+        {
+          src: require('./assets/banner/banner5.jpg'),
+          url: ''
+        }
+      ]
     }
   },
   methods: {
     click (index) {
-      console.log('============>', this.index)
     }
   }
 }
 </script>
 
 <style>
+  .el-header {
+    padding: 0px;
+  }
+
+  .el-carousel__container {
+    height: 380px;
+  }
+
+  /* .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  } */
 </style>
