@@ -39,8 +39,7 @@ export default {
 
     .tab-div span {
         font-weight: 700;
-        font-size: 18px;
-        /* line-height: 40px; */
+        font-size: 1.2em;
         color: #4e4e4e;
         font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }

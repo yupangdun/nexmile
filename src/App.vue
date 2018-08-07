@@ -1,28 +1,24 @@
 <template>
   <el-container id="app">
     <!-- 头部 -->
-    <el-header height="500px">
-      <div style="height: 120px; display: flex;flex-direction: row;align-items: center; justify-content: center;">
-        <div style="flex: 1;display: flex; align-items: center; justify-content: center;">
+    <el-header class="header">
+      <div class="header-div">
+        <div class="header-div-div header-icon">
           <img style="width:80px;" src="./assets/logo.png" />
         </div>
-        <div style="flex: 2; display: flex;align-items: center;justify-content: center;">
+        <div class="header-div-div" style="flex: 3; ">
           <c-tab :list="['产品解决方案', '应用案例', '资讯', '关于NEXMILE', '联系我们']" v-model="index" @click="click"></c-tab>
-          <div style="margin:0 40px;color:#8ac454;">中/EN</div>
+          <div class="language">中/EN</div>
           <el-input placeholder="搜索" style="width: 180px;">
             <i slot="prefix" class="el-input__icon el-icon-search"></i>
           </el-input>
         </div>
       </div>
       <el-carousel arrow="never" trigger="click">
-        <el-carousel-item v-for="(item,index) in bannerList" :key="index" style="text-align: center;">
+        <el-carousel-item v-for="(item,index) in bannerList" indicator-position="none" :key="index" style="text-align: center;">
           <img style="width: 100%;height: 100%;" :src="item.src" />
-          <div>
-            <span style="position: relative;top: -230px;color: white;font-size: 32px;">产品解决方案</span>
-          </div>
-          <div>
-            <span style="position: relative;top: -220px;color: white;font-size: 24px;">电磁屏蔽&兼容 , 射频吸收 , 无线充电解决方案</span>
-          </div>
+          <p style="position: relative;top: -280px;color: white;font-size: 2em;letter-spacing:1px;margin: 0px;">产品解决方案</p>
+          <p style="position: relative;top: -264px;color: white;font-size: 1.5em;letter-spacing:1px;margin: 0px;">电磁屏蔽&兼容 , 射频吸收 , 无线充电解决方案</p>
         </el-carousel-item>
       </el-carousel>
     </el-header>
@@ -31,8 +27,31 @@
       <router-view/>
     </el-main>
     <!-- 底部 -->
-    <el-footer style="background-color: #002d56;height:400px;">
-
+    <el-footer class="footer">
+      <div class="footer-div">
+        <div>
+          <p style="font-size: 1.5em;margin: 20px 0;">关于NEXMILE</p>
+          <p>为了工业和商业用户提供功能性原材料以及加工解决方案的供应商，以及配套企业服务，技术服务，解决方案的一体化供应链伙伴。 </p>
+          <p style="flex: 1;"></p>
+          <p>睿惢思工业科技（苏州）有限公司 版权所有 苏ICP备17027514号</p>
+        </div>
+        <div class="address">
+          <p style="font-size: 1.5em;margin: 20px 0;">联系我们 </p>
+          <p>
+            <img src="./assets/页尾-1.png" />苏州工业园区唯新路58号 启迪人工智能产业园31#第二单元
+          </p>
+          <p>
+            <img src="./assets/页尾-2.png" />0512-65927151
+          </p>
+          <p>
+            <img src="./assets/页尾-3.png" />service@nexmile.com
+          </p>
+          <div>
+            <img src="./assets/页尾-4.png">
+            <img src="./assets/页尾-5.png">
+          </div>
+        </div>
+      </div>
     </el-footer>
   </el-container>
 </template>
@@ -77,27 +96,98 @@ export default {
 </script>
 
 <style>
+  @media screen and (min-width: 750px) and (max-width: 1280px) {
+    .footer-div {
+      padding: 0 100px;
+    }
+
+  }
+
+  @media screen and (min-width: 1280px) {
+    .footer-div {
+      padding: 0 200px;
+    }
+    .header-icon {
+      flex: 1;
+    }
+  }
+
+  .header {
+    height: 600px !important;
+  }
+
+  .header-div {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-icon {
+    padding: 0 40px;
+  }
+
+  .header-div-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .language {
+    margin: 0 40px;
+    color: #8ac454;
+  }
+
   .el-header {
     padding: 0px;
   }
 
   .el-carousel__container {
-    height: 380px;
+    height: 480px;
   }
 
-  /* .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
+  .footer {
+    background-color: #002d56;
+    height: 420px !important;
+  }
+
+  .footer-div {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .footer-div div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px 20px;
+  }
+
+  .footer-div p {
+    font-size: 1.1em;
+    line-height: 36px;
     margin: 0;
+    color: white;
   }
 
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+  .address img {
+    max-width: 16px;
+    max-height: 16px;
+    margin: 0px 10px 0 0;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  } */
+  .address div {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .address div img {
+    max-width: 60px;
+    max-height: 60px;
+  }
 </style>
