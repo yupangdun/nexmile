@@ -9,7 +9,7 @@
         <div class="header-div-div" style="flex: 3; ">
           <c-tab :list="['产品解决方案', '应用案例', '资讯', '关于NEXMILE', '联系我们']" v-model="index" @click="click"></c-tab>
           <div class="language">中/EN</div>
-          <el-input placeholder="搜索" style="width: 180px;">
+          <el-input placeholder="搜索" style="max-width: 180px;">
             <i slot="prefix" class="el-input__icon el-icon-search"></i>
           </el-input>
         </div>
@@ -29,13 +29,13 @@
     <!-- 底部 -->
     <el-footer class="footer">
       <div class="footer-div">
-        <div>
+        <div style="max-width: 630px;">
           <p style="font-size: 1.5em;margin: 20px 0;">关于NEXMILE</p>
           <p>为了工业和商业用户提供功能性原材料以及加工解决方案的供应商，以及配套企业服务，技术服务，解决方案的一体化供应链伙伴。 </p>
           <p style="flex: 1;"></p>
           <p>睿惢思工业科技（苏州）有限公司 版权所有 苏ICP备17027514号</p>
         </div>
-        <div class="address">
+        <div class="address" style="max-width: 630px;">
           <p style="font-size: 1.5em;margin: 20px 0;">联系我们 </p>
           <p>
             <img src="./assets/页尾-1.png" />苏州工业园区唯新路58号 启迪人工智能产业园31#第二单元
@@ -103,10 +103,19 @@ export default {
 
   }
 
-  @media screen and (min-width: 1280px) {
-    .footer-div {
+  @media screen and (min-width: 1280px)and (max-width: 1400px) {
+    /* .footer-div {
       padding: 0 200px;
+    } */
+    .header-icon {
+      flex: 1;
     }
+  }
+
+  @media screen and (min-width: 1400px) {
+    /* .footer-div {
+      padding: 0 300px;
+    } */
     .header-icon {
       flex: 1;
     }
@@ -143,18 +152,23 @@ export default {
     padding: 0px;
   }
 
+  .el-main {
+    overflow: unset;
+  }
+
   .el-carousel__container {
-    height: 480px;
+    height: 430px;
   }
 
   .footer {
     background-color: #002d56;
-    height: 420px !important;
+    height: 350px !important;
   }
 
   .footer-div {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     height: 100%;
     flex-direction: row;
     overflow: hidden;
@@ -168,7 +182,7 @@ export default {
   }
 
   .footer-div p {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 36px;
     margin: 0;
     color: white;
