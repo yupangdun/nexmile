@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Solution from '@/views/solution.vue'
+import EMC from '@/views/emc.vue'
 
 Vue.use(Router)
 
@@ -10,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'Solution',
       component: Solution
+    },
+    {
+      path: '/emc',
+      name: 'EMC',
+      component: EMC
     }
   ]
 })

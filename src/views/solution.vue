@@ -1,9 +1,9 @@
 <template>
   <div class="div">
-    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin:40px 0;">
-      <solution-item v-for="item in list1" :key="item.src" v-bind="item"> </solution-item>
+    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin:80px 0;">
+      <solution-item v-for="item in list1" :key="item.src" v-bind="item" @click="click(item.url)"> </solution-item>
     </div>
-    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin: 0 0 60px 0;">
+    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin: 0 0 100px 0;">
       <solution-item v-for="item in list2" :key="item.src" v-bind="item"> </solution-item>
     </div>
   </div>
@@ -18,7 +18,8 @@ export default {
         {
           src: require('../assets/solution/产品解决方案-01.jpg'),
           label: 'EMC解决方案',
-          alt: 'EMC解决方案'
+          alt: 'EMC解决方案',
+          url: 'emc'
         },
         {
           src: require('../assets/solution/产品解决方案-02.jpg'),
@@ -49,6 +50,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    click (url) {
+      this.$router.push(url)
+    }
   }
 }
 </script>
@@ -60,6 +66,7 @@ export default {
   justify-content: center;
   padding: 0 10%;
 }
+
 solutionItem {
   margin: 20px;
 }
