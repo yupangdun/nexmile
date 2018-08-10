@@ -1,8 +1,8 @@
 <template>
-    <div @click="$emit('click')">
-        <img :src="src" :alt="alt" />
-        <p>{{label}}</p>
-    </div>
+  <div @click="$emit('click')">
+    <img :src="src" :alt="alt" />
+    <p>{{label}}</p>
+  </div>
 </template>
 <script>
 export default {
@@ -18,46 +18,42 @@ export default {
 }
 </script>
 <style scoped>
-    @font-face {
-        font-family: "iconfont";
-        /* IE9*/
-        src: url('../assets/font/iconfont.ttf?t=1533735893629') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-        url('../assets/font/iconfont.svg?t=1533735893629#iconfont') format('svg');
-        /* iOS 4.1- */
-    }
+@font-face {
+  font-family: "iconfont";
+  src: url("../assets/font/iconfont.ttf?t=1533735893629") format("truetype"),
+    url("../assets/font/iconfont.svg?t=1533735893629#iconfont") format("svg");
+}
 
-    div {
-        margin: 40px 20px;
-        width: 420px;
-        height: 270px;
-    }
+div {
+  flex: 1;
+  padding: 0px 0px 0px 40px;
+}
 
-    div::after {
-        font-family: "iconfont" !important;
-        font-style: normal;
-        font-size: 1.8em;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        content: "\e61c";
-        color: white;
-        position: relative;
-        top: -260px;
-        left: 320px;
-    }
+div::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  font-size: 2.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e61c";
+  color: white;
+  position: relative;
+  top: 60px;
+  left: calc(100% - 60px);
+  line-height: 0px;
+}
 
-    img {
-        width: 100%;
-        height: 100%;
-        /* object-fit: cover; */
-    }
+img {
+  width: 100%;
+}
 
-    p {
-        position: relative;
-        top: -60px;
-        color: white;
-        font-size: 1.2em;
-        text-indent: 1em;
-        margin: 0;
-
-    }
+p {
+  position: relative;
+  top: -60px;
+  color: white;
+  font-size: 1.6rem;
+  text-indent: 1rem;
+  margin: 0;
+  line-height: 0px;
+}
 </style>
