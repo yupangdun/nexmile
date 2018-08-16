@@ -59,11 +59,11 @@ export default {
 </script>
 
 <style>
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .header-icon {
     flex: 1;
   }
-}
+} */
 
 .header {
   height: 550px !important;
@@ -71,10 +71,11 @@ export default {
 
 .header-div {
   height: 120px;
+  padding-left: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .header-icon {
@@ -84,7 +85,8 @@ export default {
 .header-div-div {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 5%;
 }
 
 .language {

@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Solution from '@/views/solution.vue'
-import EMC from '@/views/emc.vue'
+import Category from '@/views/category.vue'
+import CategoryItem from '@/views/categoryItem.vue'
+import CategoryDetail from '@/views/categoryDetail.vue'
 
 Vue.use(Router)
 
@@ -13,9 +15,19 @@ export default new Router({
       component: Solution
     },
     {
-      path: '/emc',
-      name: 'EMC',
-      component: EMC
+      path: '/category',
+      name: 'Category',
+      component: Category
+    },
+    {
+      path: '/category-item',
+      name: 'CategoryItem',
+      component: CategoryItem
+    },
+    {
+      path: '/category-detail',
+      name: 'CategoryDetail',
+      component: CategoryDetail
     }
   ]
 })

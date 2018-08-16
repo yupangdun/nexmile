@@ -1,60 +1,48 @@
 <template>
   <div class="div">
-    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin:80px 0;">
-      <solution-item v-for="item in list1" :key="item.src" v-bind="item" @click="click(item.url)"> </solution-item>
-    </div>
-    <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin: 0 0 100px 0;">
-      <solution-item v-for="item in list2" :key="item.src" v-bind="item"> </solution-item>
+    <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
+      <solution-item v-for="item in list" :key="item.src" :src="item.image" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item>
+      <div v-for='item in (3-list.length)' :key="item" style="flex: 1;padding: 0px 0px 0px 40px;"></div>
     </div>
   </div>
 </template>
 <script>
 import SolutionItem from '../components/SolutionItem.vue'
+import request from '../api/index.js'
 export default {
   components: { SolutionItem },
   data () {
     return {
-      list1: [
-        {
-          src: require('../assets/solution/产品解决方案-01.jpg'),
-          label: 'EMC解决方案',
-          alt: 'EMC解决方案',
-          url: 'emc'
-        },
-        {
-          src: require('../assets/solution/产品解决方案-02.jpg'),
-          label: '热管理解决方案',
-          alt: '热管理解决方案'
-        },
-        {
-          src: require('../assets/solution/产品解决方案-03.jpg'),
-          label: 'EMC解决方案',
-          alt: 'EMC解决方案'
+      list: []
+    }
+  },
+  computed: {
+    solutionList () {
+      let list = []
+      for (let i = 0; i < Math.ceil(this.list.length / 3); i++) {
+        for (let n = i * 3; n < (i + 1) * 3 && n < this.list.length; n++) {
+          if (!list[i]) {
+            list[i] = []
+          }
+          list[i].push(this.list[n])
         }
-      ],
-      list2: [
-        {
-          src: require('../assets/solution/产品解决方案-04.jpg'),
-          label: '缓冲密封类解决方案',
-          alt: '缓冲密封类解决方案'
-        },
-        {
-          src: require('../assets/solution/产品解决方案-05.jpg'),
-          label: 'EMC解决方案',
-          alt: 'EMC解决方案'
-        },
-        {
-          src: require('../assets/solution/产品解决方案-06.jpg'),
-          label: '热管理解决方案',
-          alt: '热管理解决方案'
-        }
-      ]
+      }
+      return list
     }
   },
   methods: {
-    click (url) {
-      this.$router.push(url)
+    click (item) {
+      this.$router.push({ name: 'Category', query: item })
     }
+  },
+  created () {
+    request.getCategroy(0).then(res => {
+      if (res.status === 200 && res.data.status === 200) {
+        this.list = res.data.data
+      } else {
+        alert('请求网络错误')
+      }
+    })
   }
 }
 </script>
@@ -62,12 +50,20 @@ export default {
 .div {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   padding: 0 10%;
 }
 
-solutionItem {
-  margin: 20px;
+.first-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px 0;
+}
+.other-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 100px 0;
 }
 </style>

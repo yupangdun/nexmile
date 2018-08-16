@@ -1,6 +1,6 @@
 <template>
   <div class="div">
-    <div style="background-color:white;height:100%;">
+    <div style="background-color:white;height:100%;" @click="$emit('click')">
       <div class="img-div">
         <img :src="src">
       </div>
