@@ -52,7 +52,6 @@ export default {
   methods: {
     click (index) {
       this.index = index
-      console.log('============>', index)
     }
   }
 }

@@ -1,17 +1,51 @@
 <template>
   <div class="base">
-    <div class="c-header">
+    <div class="c-row">
       <div class="c-header-div">
-        <p class="c-header-div-p1">导电裸布</p>
-        <p class="c-header-div-p2">随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化随着城市社区化</p>
+        <p class="p1">{{item.name}}</p>
+        <p class="p2">{{item.introduction}}</p>
       </div>
-      <div class="c-header-image"><img style="width:100%;" src="../assets/solution/产品解决方案-EMC-导电布及胶带-01.jpg" alt=""></div>
-
+      <div class="c-header-image"><img style="width:100%;" :src="item.image" alt="图片加载中..."></div>
+    </div>
+    <hr style="margin:20px 40px;color:#d3d3d3;background-color:#d3d3d3;height:1px;border:none;" />
+    <div class="c-row-body">
+      <div>
+        <p class="p1">特性与优势</p>
+        <p class="p2">{{item.feature}}</p>
+      </div>
+      <div>
+        <p class="p1">应用领域</p>
+        <ul>
+          <li v-for="i in item.application" :key="i">
+            <span>{{i}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding:0 40px;">
+      <img style="width:100%;" :src="item.image">
+    </div>
+    <div class="tip-div" @click="goback">
+      <p class="tip">查看更多产品</p>
     </div>
   </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      item: {}
+
+    }
+  },
+  methods: {
+    goback () {
+      this.$router.go(-1)
+    }
+  },
+  created () {
+    this.item = this.$route.query
+  }
 }
 </script>
 <style scoped>
@@ -19,29 +53,67 @@ export default {
   background-color: white;
   padding: 20px 10%;
 }
-.c-header {
+.c-row {
+  display: flex;
+  flex-direction: row;
+  padding: 0 40px;
+}
+.c-row-body {
   display: flex;
   flex-direction: row;
   padding: 0 40px;
 }
 
+.c-row-body div {
+  width: 50%;
+  padding: 0 40px 20px 0;
+}
+.c-row-body .p1 {
+  font-size: 1.4rem;
+  color: #0055aa;
+}
+li {
+  color: #0055aa;
+}
+
+li span {
+  line-height: 2rem;
+  color: #666;
+}
+
 .c-header-div {
   flex: 1;
   padding: 0 40px 0 0;
-  line-height: 1.5rem;
 }
 
 .c-header-div .p1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #0055aa;
 }
 
 .c-header-div .p2 {
   font-size: 1.2rem;
-  color: #0055aa;
+  line-height: 2rem;
+  color: #666;
 }
 
 .c-header-image {
-  width: 400px;
+  width: 40%;
+}
+
+.tip-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 20px 40px;
+}
+.tip {
+  text-align: center;
+  margin: 0;
+  line-height: 40px;
+  width: 180px;
+  position: relative;
+  color: white;
+  background-color: #7dbe4e;
 }
 </style>

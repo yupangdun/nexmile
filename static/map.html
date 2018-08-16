@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <style type="text/css">
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .iw_poi_title {
+      color: #CC5522;
+      font-size: 14px;
+      font-weight: bold;
+      overflow: hidden;
+      padding-right: 13px;
+      white-space: nowrap
+    }
+
+    .iw_poi_content {
+      font: 12px arial, sans-serif;
+      overflow: visible;
+      padding-top: 4px;
+      white-space: -moz-pre-wrap;
+      word-wrap: break-word
+    }
+  </style>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <div style="width: 100%;height: 100%; border:#ccc solid 1px;" id="dituContent"></div>
+</body>
+<script type="text/javascript">
+  function initMap() {
+    createMap();
+    setMapEvent();
+    addMapControl();
+    addMarker();
+  }
+
+  function createMap() {
+    var map = new BMap.Map("dituContent");
+    var point = new BMap.Point(120.737035, 31.365886);
+    map.centerAndZoom(point, 15);
+    window.map = map;
+  }
+
+  function setMapEvent() {
+    map.enableDragging();
+    map.enableScrollWheelZoom();
+    map.enableDoubleClickZoom();
+    map.enableKeyboard();
+  }
+
+  function addMapControl() {
+  }
+
+  var markerArr = [{ title: "唯新路58号", content: "唯新路58号", point: "120.737502|31.366132", isOpen: 0, icon: { w: 48, h: 48, l: 10, t: 0, x: 6, lb: 15 } }
+  ];
+  function addMarker() {
+    for (var i = 0; i < markerArr.length; i++) {
+      var json = markerArr[i];
+      var p0 = json.point.split("|")[0];
+      var p1 = json.point.split("|")[1];
+      var point = new BMap.Point(p0, p1);
+      var iconImg = createIcon(json.icon);
+      var marker = new BMap.Marker(point, { icon: iconImg });
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+      marker.setLabel(label);
+      map.addOverlay(marker);
+      label.setStyle({
+        borderColor: "#808080",
+        color: "#333",
+        cursor: "pointer"
+      });
+
+      (function () {
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click", function () {
+          this.openInfoWindow(_iw);
+        });
+        _iw.addEventListener("open", function () {
+          _marker.getLabel().hide();
+        })
+        _iw.addEventListener("close", function () {
+          _marker.getLabel().show();
+        })
+        label.addEventListener("click", function () {
+          _marker.openInfoWindow(_iw);
+        })
+        if (!!json.isOpen) {
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+    }
+  }
+  function createInfoWindow(i) {
+    var json = markerArr[i];
+    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+    return iw;
+  }
+  function createIcon(json) {
+    var icon = new BMap.Icon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEf0lEQVRoQ+1YXWgcVRT+zuzciUnUFtQ2ppm1iW4zY6Q1PlhapY/65A8IPhS0Kkof6h9ibRT6IhZtiQj+gATqH9InX6T64ouCClFEFFP2JzWRnU1ia7G0WpLMnZkjE7MYtrPrvZNd00j2dc/5fu6559yzS1jlH1rl+rFmYKUruFaB/2UFGBClHmwwWNihgYBYzmyp4DQBstmGm3aFJjZgo2wTu5lwFxi7QJRZKpaZAyJ8SYzjYl4e6zuNU80ws2wD093oOJ8xn2HQEBF1qohi5j8JfKSTg2G7glmVnHoxyzJQuhZuaFofEyGXRgQzxjOBf8+WGeTT5Mc5qQ0U7cy9DOMYiNrTki/kMc8yRfe75fCTNDipDORt8w6APiUiMw3pRTnMsxHo1hs9f0wXT9tAsQebIhIlIurQJfuX+MnOyB/Q7QltAwVbHAXRI43F8DlmfAiiM8TcxcA2IgwC1NYwjzHseP5+nYPRMjBu4/oQogQiI5GEeRaE5zsjOVJ7koWrcQXaxdsg2l1XIHMIX+acU5hUNaFloJg1hxjGy/XEU4Qd/VPyx0bkxR7xGBs0Uj8mGnLKweGWGMjbYpSItieBc8RPuBX5pgpxwRavgejpRBzmUdeTO1RwtMYoA1S0hax9YRdH4ZnQk5sGAF+FOH78zmVEmYiuqo2PX2zHkxYBrIKlfIUmr0HXfLs1U+fU3nc9+ZAKYTUmb4v3iGhPUo4153eprhrKBgo91lYYSL7fUXTAqQRHdAwUsuYBwHgl+Tpiq1vxf1LBUzZQyqIvgvVzcgWiZ10veFWFsBpT6DGfg2EkN+u836c6iZQNTG7GZfOhuJA8Qvl1pyyf0jFQ7wrFPWB68vIcMK+Cp2wgBivY4gcQbbu48XDS9Xzlhe4EYBm2mE5qYoC/dsrydhXxWlPobwPWiyAcTASP+FGnIo+qEBdtsY+JEkcuc7Tf9YJhFRxtAye7YcuMmEhc4phnVR6y8W5xS5jBV0lbLIOlEcne/gqmWmJgoQpZ8QFADyQSxKsEsM/x5Lu138ez/4+M2MvAoXorOIHf6C/LJ1XFa1cgTsh3YTOEONFoG2Xmb8D0uUGLY5d4JwMPArSurjiGl7ng35T7HedbamCxmR8G0Ts6RA1jmTkTYWduSo7qYmpNoaXg+az1EQH36RLWiT/slP2hNFipDcTrMXdYJQK60hBXc5h5zPHkIAFBGpzUBmKykm3uikBfgCglDs8hkDc70yimEZ+qiWuJirZ1iAkvpBFAzI/3e/KtNLnVnJQn9w8lA2YhK74l0KCOEGZ85nr+nTo5SbHLNrAwlTaily0xpvpDn8FnTV/2537Fb5eEAd3Rygjvdsvh8eWKb0oP6I5WBo+4Zbm3GeKbbkBhtE60Gf5A7y+YuyQNNBqtC3t+iO25afl9s8Q3vQJVYYmjlaODjhe81EzxLTNQO1qZedTx5G0ERKvCwJLR+l38/7MI5eAN0/CaLb5lFagKnVyP9caVoOvKONsK8S030CrRS3Gb8hL/F0LrcawZWMnTX+uBlT79mP8vr1muQI8EynYAAAAASUVORK5CYII=", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+    return icon;
+  }
+
+  initMap();
+</script>
+
+</html>
