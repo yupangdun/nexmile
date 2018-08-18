@@ -8,6 +8,7 @@ import CategoryItem from '@/views/categoryItem.vue'
 import CategoryDetail from '@/views/categoryDetail.vue'
 import About from '@/views/about.vue'
 import Contact from '@/views/contact.vue'
+import Case from '@/views/case.vue'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/case',
+      name: 'Case',
+      component: Case
     },
     {
       path: '/category',

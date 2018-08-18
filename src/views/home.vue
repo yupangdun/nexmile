@@ -17,7 +17,7 @@
       </div>
     </div>
     <div style="height:430px;">
-      <img style="width: 100%;height:430px;" src="../assets/banner/banner3.jpg" />
+      <img style="width: 100%;height:430px;" src="../assets/solution/首页-应用案例.jpg" />
       <p class="img-p1">应用案例</p>
       <p class="img-p2">广泛应用于通讯设备、航空航天、医疗、电子、机械制造、轨道交通、新能源等行业</p>
     </div>
