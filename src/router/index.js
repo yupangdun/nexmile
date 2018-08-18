@@ -9,6 +9,7 @@ import CategoryDetail from '@/views/categoryDetail.vue'
 import About from '@/views/about.vue'
 import Contact from '@/views/contact.vue'
 import Case from '@/views/case.vue'
+import CaseDetail from '@/views/caseDetail.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/case',
       name: 'Case',
       component: Case
+    },
+    {
+      path: '/case-detail',
+      name: 'CaseDetail',
+      component: CaseDetail
     },
     {
       path: '/category',
