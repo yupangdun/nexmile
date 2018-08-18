@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .base {
   flex: 1;
   display: flex;

@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .base {
   background-color: white;
   width: 33%;

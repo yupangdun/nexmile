@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style>
+<style ccoped>
 .case-base {
   background-color: #eee;
   padding: 40px 10%;

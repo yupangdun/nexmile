@@ -10,6 +10,8 @@ import About from '@/views/about.vue'
 import Contact from '@/views/contact.vue'
 import Case from '@/views/case.vue'
 import CaseDetail from '@/views/caseDetail.vue'
+import Infomation from '@/views/infomation.vue'
+import InfomationDetail from '@/views/infomationDetail.vue'
 
 Vue.use(Router)
 
@@ -35,6 +37,17 @@ export default new Router({
       name: 'Contact',
       component: Contact
     },
+    {
+      path: '/infomation',
+      name: 'Infomation',
+      component: Infomation
+    },
+    {
+      path: '/infomation-detail',
+      name: 'InfomationDetail',
+      component: InfomationDetail
+    },
+
     {
       path: '/case',
       name: 'Case',
