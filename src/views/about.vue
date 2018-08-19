@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .base {
   margin: 0 10%;
-  padding: 60px;
+  padding: 40px 160px;
 }
 .a-h1 {
   color: #0055a9;
@@ -47,7 +47,7 @@ export default {
 
 .a-h2 {
   color: #0055a9;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 40px 0 0;
 }
 hr {
@@ -59,7 +59,7 @@ li {
   color: #0055a9;
 }
 .content {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   color: #666;
   margin-top: 10px;

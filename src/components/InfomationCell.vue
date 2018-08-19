@@ -1,5 +1,5 @@
 <template>
-  <div class="ibase">
+  <div class="ibase" @click='$emit("click")'>
     <div class="div-1">
       <p class="date-day">07</p>
       <p class="date-month">2017年07月</p>

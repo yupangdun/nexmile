@@ -46,12 +46,12 @@ export default {
   components: { 'c-header': Header },
   data () {
     return {
-      index: 0
     }
   },
   methods: {
     click (index) {
-      this.index = index
+      let path = ['/', 'solution', 'case', 'infomation', 'about', 'contact']
+      this.$router.push(path[index])
     }
   }
 }
@@ -79,6 +79,7 @@ export default {
 
 .header-icon {
   padding: 0 40px;
+  height: 100%;
 }
 
 .header-div-div {

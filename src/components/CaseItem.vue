@@ -1,5 +1,5 @@
 <template>
-  <div class="base">
+  <div class="base" @click="$emit('click')">
     <img :src="image">
     <p>{{content}}</p>
   </div>

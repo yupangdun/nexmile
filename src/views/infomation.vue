@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <infomation-cell></infomation-cell>
+    <infomation-cell @click="click"></infomation-cell>
     <infomation-cell></infomation-cell>
     <infomation-cell></infomation-cell>
     <infomation-cell></infomation-cell>
@@ -14,7 +14,12 @@
 <script>
 import InfomationCell from '../components/InfomationCell'
 export default {
-  components: { InfomationCell }
+  components: { InfomationCell },
+  methods: {
+    click () {
+      this.$router.push({ name: 'InfomationDetail' })
+    }
+  }
 }
 </script>
 

@@ -64,6 +64,7 @@ export default {
     },
     home () {
       this.$store.state.index = 0
+      this.$emit('click', 0)
     }
   }
 

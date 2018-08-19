@@ -6,7 +6,7 @@
     </div>
     <div class="case-box">
       <div class='box-div'>
-        <case-item v-for="(item,index) in list" :key='index' :image='item.image' :content='item.name'></case-item>
+        <case-item v-for="(item,index) in list" :key='index' :image='item.image' :content='item.name' @click='click(item)'></case-item>
       </div>
     </div>
   </div>
@@ -58,6 +58,11 @@ export default {
       ]
 
     }
+  },
+  methods: {
+    click (item) {
+      this.$router.push({ name: 'CaseDetail' })
+    }
   }
 }
 </script>
@@ -65,7 +70,7 @@ export default {
 <style scoped>
 .case-base {
   margin: 0 10%;
-  padding: 20px 60px;
+  padding: 40px 60px;
 }
 
 .case-base p {

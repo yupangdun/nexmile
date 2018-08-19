@@ -10,7 +10,7 @@
         <solution-item v-for="item in list" :key="item.name" :src="item.image" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item>
       </div>
 
-      <div class="more">
+      <div class="more" @click="more">
         <div>
           <p>查看更多解决方案</p>
         </div>
@@ -39,6 +39,8 @@
 <script>
 import SolutionItem from '../components/SolutionItem'
 import InformationItem from '../components/InformationItem'
+import request from '../api/index.js'
+
 export default {
   components: { SolutionItem, InformationItem },
   data () {
@@ -62,6 +64,23 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    click (item) {
+      this.$router.push({ name: 'Category', query: item })
+    },
+    more () {
+      this.$router.push({ name: 'Solution' })
+    }
+  },
+  created () {
+    request.getCategroy(0).then(res => {
+      if (res.status === 200 && res.data.status === 200) {
+        this.list = res.data.data
+      } else {
+        alert('请求网络错误')
+      }
+    })
   }
 }
 </script>
