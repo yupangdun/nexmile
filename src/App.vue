@@ -26,7 +26,7 @@
             <img src="./assets/页尾-2.png" />0512-65927151
           </p>
           <p>
-            <img src="./assets/页尾-3.png" />service@nexmile.com
+            <img src="./assets/页尾-3.png" />info@nex-mile.com
           </p>
           <div>
             <img src="./assets/页尾-4.png">
