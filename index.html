@@ -2,26 +2,42 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="keywords" content="keywords1,keywords2,keywords3">
-    <meta name="description" content="keywords1,keywords2,keywords3">
-    <title>NEXMILE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="keywords" content="keywords1,keywords2,keywords3">
+  <meta name="description" content="keywords1,keywords2,keywords3">
+  <title>NEXMILE</title>
 </head>
 <style>
-    html {
-        font-size: 100%;
-    }
+  /* html {
+    font-size: 16px;
+  } */
 
-    body {
-        margin: 0px;
-        min-width: 750px;
-    }
+  body {
+    margin: 0px;
+    min-width: 750px;
+  }
+
+  .window {
+    font-size: 100%;
+  }
+
+  .mac {
+    font-size: 14px;
+  }
 </style>
 
 <body onselectstart="return false">
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
 </body>
+
+<script>
+  if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
+    $('body').addClass('mac');
+  } else {
+    $('body').addClass('window');
+  }
+</script>
 
 </html>

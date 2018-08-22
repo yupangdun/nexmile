@@ -63,7 +63,7 @@ export default {
   created () {
     request.getCategroy(0).then(res => {
       if (res.status === 200 && res.data.status === 200) {
-        this.list = res.data.data.slice(0, 4)
+        this.list = res.data.data.slice(0, 3)
       } else {
         alert('请求网络错误')
       }
