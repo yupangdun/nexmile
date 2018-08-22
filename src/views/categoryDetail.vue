@@ -23,10 +23,10 @@
       </div>
     </div>
     <div style="padding:0 40px;">
-      <img style="width:100%;" :src="item.image">
+      <img style="width:100%;" src="../assets/solution/table.png">
     </div>
-    <div class="tip-div" @click="goback">
-      <p class="tip">查看更多产品</p>
+    <div class="tip-div">
+      <a class="tip" target='_blank' href="http://www.la-smiless.com/client">查看更多产品</a>
     </div>
   </div>
 </template>

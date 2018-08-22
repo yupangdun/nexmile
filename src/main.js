@@ -5,16 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import { Carousel, CarouselItem, Container, Header, Main, Footer, Input } from 'element-ui'
+import { Carousel, CarouselItem, Container, Header, Main, Footer, Input, Pagination } from 'element-ui'
 
 Vue.component(Container.name, Container)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Footer.name, Footer)
 Vue.component(Input.name, Input)
-
 Vue.component(Carousel.name, Carousel)
 Vue.component(CarouselItem.name, CarouselItem)
+Vue.component(Pagination.name, Pagination)
 
 Vue.config.productionTip = false
 

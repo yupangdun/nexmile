@@ -12,7 +12,7 @@
         </el-input>
       </div>
     </div>
-    <el-carousel arrow="never" trigger="click">
+    <el-carousel arrow="never" trigger="click" indicator-position="none">
       <el-carousel-item v-for="(item,index) in bannerList" indicator-position="none" :key="index" style="text-align: center;">
         <img style="width: 100%;height: 100%;" :src="header.src" />
         <p class="p1">{{header.h1}}</p>

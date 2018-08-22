@@ -1,10 +1,10 @@
 <template>
   <div class="i-base">
-    <div class="i-box">
-      <p style="color:#0055a9;">2018-5-3</p>
-      <p class="i-p1">优化3D打印材料和软件</p>
+    <div class="i-box" @click="$emit('click')">
+      <p style="color:#0055a9;">{{date}}</p>
+      <p class="i-p1">{{title}}</p>
       <div style="flex:1;">
-        <p class="i-p2">3D打印是一种变革性的技术，它使完全个性化产品的大规模制造成为可能，同时保持成本高效，具备彻底革新所有行业的潜力...</p>
+        <p class="i-p2">{{getContent}}</p>
       </div>
       <p style="color:#0055a9;">阅读更多</p>
     </div>
@@ -13,7 +13,20 @@
 
 <script>
 export default {
-
+  props: {
+    title: String,
+    content: String,
+    date: String
+  },
+  computed: {
+    getContent () {
+      let str = this.content
+      if (this.content && this.content.length > 60) {
+        str = this.content.substring(0, 60) + '...'
+      }
+      return str
+    }
+  }
 }
 </script>
 

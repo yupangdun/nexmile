@@ -1,22 +1,41 @@
 <template>
   <div class="ibase" @click='$emit("click")'>
     <div class="div-1">
-      <p class="date-day">07</p>
-      <p class="date-month">2017年07月</p>
+      <p class="date-day">{{getDay}}</p>
+      <p class="date-month">{{getDate}}</p>
     </div>
     <div class="div-2">
-      <p class="name">柔性功能材料</p>
+      <p class="name">{{title}}</p>
       <div class="content">
-        <p>广泛广泛应用与广泛应用与应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛广泛应用与广泛应用与应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与广泛应用与
-        </p>
+        <p>{{getContent}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
-
+  props: {
+    title: String,
+    content: String,
+    date: String
+  },
+  computed: {
+    getDay () {
+      return moment(this.date).format('DD')
+    },
+    getDate () {
+      return moment(this.date).format('YYYY年MM月')
+    },
+    getContent () {
+      let str = this.content
+      if (this.content && this.content.length > 60) {
+        str = this.content.substring(0, 60) + '...'
+      }
+      return str
+    }
+  }
 }
 </script>
 

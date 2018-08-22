@@ -28,9 +28,9 @@
         <p class='p2'>我们很愿意及时、直接地回答媒体垂询。</p>
       </div>
       <div class="information">
-        <InformationItem></InformationItem>
-        <InformationItem></InformationItem>
-        <InformationItem></InformationItem>
+        <InformationItem v-for="(item,index) in infoList" :key="index" v-bind='item' @click="clickInfo(item)"></InformationItem>
+        <!-- <InformationItem></InformationItem>
+        <InformationItem></InformationItem> -->
       </div>
     </div>
   </div>
@@ -45,24 +45,8 @@ export default {
   components: { SolutionItem, InformationItem },
   data () {
     return {
-      list: [
-        {
-          name: 'EMC解决方案',
-          image: require('../assets/solution/首页-产品解决方案-1.jpg')
-        },
-        {
-          name: '热管理解决方案',
-          image: require('../assets/solution/首页-产品解决方案-2.jpg')
-        },
-        {
-          name: '粘接类解决方案',
-          image: require('../assets/solution/首页-产品解决方案-3.jpg')
-        },
-        {
-          name: '缓冲密封类解决方案',
-          image: require('../assets/solution/首页-产品解决方案-4.jpg')
-        }
-      ]
+      list: [],
+      infoList: []
     }
   },
   methods: {
@@ -71,14 +55,23 @@ export default {
     },
     more () {
       this.$router.push({ name: 'Solution' })
+    },
+    clickInfo (item) {
+      this.$router.push({ name: 'InfomationDetail', params: item })
     }
   },
   created () {
     request.getCategroy(0).then(res => {
       if (res.status === 200 && res.data.status === 200) {
-        this.list = res.data.data
+        this.list = res.data.data.slice(0, 4)
       } else {
         alert('请求网络错误')
+      }
+    })
+
+    request.getNews(0, 3).then(result => {
+      if (result.data.status === 200) {
+        this.infoList = result.data.data.list
       }
     })
   }

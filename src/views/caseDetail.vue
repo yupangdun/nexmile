@@ -30,7 +30,7 @@ export default {
 
 <style ccoped>
 .case-base {
-  background-color: #eee;
+  /* background-color: #eee; */
   padding: 40px 10%;
 }
 .case-base-div {
