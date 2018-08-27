@@ -6,7 +6,7 @@
       </div>
       <div class="label-div">
         <p class="p1">{{label}}</p>
-        <p class="p2">{{subLabel}}</p>
+        <p class="p2">{{getContent}}</p>
       </div>
     </div>
   </div>
@@ -17,6 +17,15 @@ export default {
     src: String,
     label: String,
     subLabel: String
+  },
+  computed: {
+    getContent () {
+      let str = this.subLabel
+      if (this.subLabel && this.subLabel.length > 60) {
+        str = this.subLabel.substring(0, 60) + '...'
+      }
+      return str
+    }
   }
 }
 </script>

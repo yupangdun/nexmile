@@ -7,7 +7,12 @@
       <div class="text">
         <p class="h1">{{name}}</p>
         <p class="p">{{introduction}}</p>
-        <p class="p">{{feature}}</p>
+        <!-- <p class="p">{{feature}}</p> -->
+        <ul>
+          <li v-for="i in feature" :key="i">
+            <span>{{i}}</span>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="tip-div">
@@ -22,7 +27,7 @@ export default {
     image: String,
     name: String,
     introduction: String,
-    feature: String
+    feature: Array
   }
 }
 </script>
@@ -67,5 +72,14 @@ export default {
 .p {
   color: #666;
   line-height: 2rem;
+}
+
+li {
+  color: #0055aa;
+}
+
+li span {
+  line-height: 2rem;
+  color: #666;
 }
 </style>

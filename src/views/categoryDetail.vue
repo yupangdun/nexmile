@@ -11,7 +11,12 @@
     <div class="c-row-body">
       <div>
         <p class="p1">特性与优势</p>
-        <p class="p2">{{item.feature}}</p>
+        <!-- <p class="p2">{{item.feature}}</p> -->
+        <ul>
+          <li v-for="i in item.feature" :key="i">
+            <span>{{i}}</span>
+          </li>
+        </ul>
       </div>
       <div>
         <p class="p1">应用领域</p>
@@ -23,7 +28,7 @@
       </div>
     </div>
     <div style="padding:0 40px;">
-      <img style="width:100%;" src="../assets/solution/table.png">
+      <img style="width:100%;" :src="item.product_image">
     </div>
     <div class="tip-div">
       <a class="tip" target='_blank' href="http://www.la-smiless.com/client">查看更多产品</a>
