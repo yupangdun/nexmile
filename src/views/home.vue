@@ -33,9 +33,8 @@
         <p class='p2'>新能源、轨道交通，汽车等工业领域</p>
       </div>
 
-      <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
-        <solution-item v-for="item in list" :key="item.src" :src="item.image" :label='item.name' :alt='item.name' @click="clickAPP(item)"> </solution-item>
-        <div v-for='item in (3-list.length)' :key="item" style="flex: 1;padding: 0px 0px 0px 40px;"></div>
+      <div class="other-list">
+        <solution-item v-for="item in caseList" :key="item.name" :src="item.image" :label='item.name' :alt='item.name' @click="clickAPP(item)"> </solution-item>
       </div>
 
       <div class="more" @click="moreAPP">
@@ -60,7 +59,23 @@ export default {
   data () {
     return {
       list: [],
-      infoList: []
+      infoList: [],
+      caseList: [
+        {
+          name: "消费电子",
+          image: require('../assets/solution/产品解决方案-04.jpg')
+        },
+        {
+          name: "新能源",
+          image: require('../assets/solution/产品解决方案-05.jpg')
+
+        },
+        {
+          name: "军工",
+          image: require('../assets/solution/产品解决方案-06.jpg')
+
+        }
+      ]
     }
   },
   computed: {

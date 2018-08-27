@@ -70,6 +70,7 @@ export default {
 
 .header-p-2 {
   font-size: 1.4rem;
+  line-height: 2rem;
   color: #808080;
 }
 </style>

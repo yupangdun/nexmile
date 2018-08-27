@@ -1,16 +1,19 @@
 <template>
   <div class="base">
     <img :src="image">
-    <p class="address">地址</p>
-    <p class="content">工业园区唯新路58号</p>
-    <p class="content">启迪人工智能产业园31#第二单元</p>
+    <p class="address">{{name}}</p>
+    <p class="content">{{content1}}</p>
+    <p class="content">{{content2}}</p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    image: String
+    image: String,
+    name: String,
+    content1: String,
+    content2: String
   }
 }
 </script>

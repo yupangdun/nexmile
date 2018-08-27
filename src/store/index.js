@@ -13,8 +13,8 @@ export default new Vuex.Store({
       switch (state.index) {
         case 0:
           src = require('../assets/banner/banner3.jpg')
-          h1 = ''
-          h2 = '在功能材料领域为客户探求更佳的柔性解决方案'; break
+          h1 = '在功能材料领域为客户探求更佳的柔性解决方案'
+          h2 = ''; break
         case 1:
           src = require('../assets/banner/banner1.jpg')
           h1 = '产品解决方案'
