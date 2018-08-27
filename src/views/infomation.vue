@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     change () {
-      return this.load(this.value)
+      return this.load(this.value - 1)
     }
   },
   methods: {
@@ -38,9 +38,6 @@ export default {
         }
       })
     }
-  },
-  created () {
-    this.load(0)
   }
 }
 </script>
