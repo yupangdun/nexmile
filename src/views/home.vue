@@ -62,16 +62,16 @@ export default {
       infoList: [],
       caseList: [
         {
-          name: "消费电子",
+          name: '消费电子',
           image: require('../assets/solution/产品解决方案-04.jpg')
         },
         {
-          name: "新能源",
+          name: '新能源',
           image: require('../assets/solution/产品解决方案-05.jpg')
 
         },
         {
-          name: "军工",
+          name: '军工',
           image: require('../assets/solution/产品解决方案-06.jpg')
 
         }
