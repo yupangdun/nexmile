@@ -58,6 +58,11 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "iconfont";
+  src: url("./assets/font/iconfont.ttf?t=1533735893629") format("truetype"),
+    url("./assets/font/iconfont.svg?t=1533735893629#iconfont") format("svg");
+}
 /* @media screen and (min-width: 800px) {
   .header-icon {
     flex: 1;
@@ -65,12 +70,14 @@ export default {
 } */
 
 .header {
-  height: 550px !important;
+  height: 530px !important;
 }
 
 .header-div {
-  height: 120px;
-  padding-left: 10%;
+  height: 105px;
+  /* padding-left: 10%; */
+  width: 1200px;
+  margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -78,7 +85,7 @@ export default {
 }
 
 .header-icon {
-  padding: 0 40px;
+  /* padding: 0 40px; */
   height: 100%;
 }
 
@@ -86,12 +93,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 5%;
+  /* padding-right: 5%; */
 }
 
 .language {
-  margin: 0 40px;
-  color: #8ac454;
+  margin: 0 20px;
+  font-size: 16pt;
+  color: #7dbe4e;
 }
 
 .el-header {
@@ -101,10 +109,11 @@ export default {
 .el-main {
   overflow: unset;
   padding: 0px;
+  background: #f2f2f2;
 }
 
 .el-carousel__container {
-  height: 430px;
+  height: 425px;
 }
 
 .footer {

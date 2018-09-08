@@ -34,14 +34,11 @@ export default {
 }
 
 .tab-selected {
-  color: #0055a9 !important;
+  color: #0055aa !important;
 }
 
 .tab-div span {
-  font-weight: 700;
-  font-size: 1.2em;
-  color: #4e4e4e;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 16pt;
+  color: #4d4d4d;
 }
 </style>

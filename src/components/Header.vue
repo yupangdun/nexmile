@@ -26,20 +26,21 @@
   position: relative;
   top: -280px;
   color: white;
-  font-size: 2rem;
+  font-size: 40pt;
   letter-spacing: 1px;
   margin: 0px;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .p2 {
   position: relative;
   top: -264px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 21pt;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0 20%;
-  line-height: 3rem;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 </style>
 <script>
