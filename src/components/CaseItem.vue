@@ -16,14 +16,14 @@ export default {
 
 <style scoped>
 .base {
-  background-color: white;
-  width: 33%;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
-  border: 1px solid #eeeeee;
+  border: 1px solid #808080;
+  width: 338px;
+  height: 191px;
 }
 
 .base img {

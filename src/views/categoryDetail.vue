@@ -56,7 +56,9 @@ export default {
 <style scoped>
 .base {
   background-color: white;
-  padding: 20px 10%;
+  padding: 20px 0;
+  width: 1200px;
+  margin: auto;
 }
 .c-row {
   display: flex;
@@ -82,8 +84,9 @@ li {
 }
 
 li span {
-  line-height: 2rem;
-  color: #666;
+  line-height: 26pt;
+  font-size: 13pt;
+  color: #4d4d4d;
 }
 
 .c-header-div {
@@ -92,14 +95,14 @@ li span {
 }
 
 .c-header-div .p1 {
-  font-size: 1.6rem;
+  font-size: 24pt;
   color: #0055aa;
 }
 
 .c-header-div .p2 {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  color: #666;
+  font-size: 13pt;
+  line-height: 26pt;
+  color: #4d4d4d;
 }
 
 .c-header-image {
@@ -120,5 +123,6 @@ li span {
   position: relative;
   color: white;
   background-color: #7dbe4e;
+  text-decoration: none;
 }
 </style>

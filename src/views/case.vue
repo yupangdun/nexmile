@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background:white;">
     <div class="case-base">
       <p>Nexmile 致力于在功能材料领域为客户探求更佳的柔性解决方案。</p>
       <p>专业服务于信息通讯，消费电子，智能穿戴，新能源，国防军工，医疗设备等科技领域。</p>
@@ -69,25 +69,27 @@ export default {
 
 <style scoped>
 .case-base {
-  margin: 0 10%;
-  padding: 40px 60px;
+  padding: 40px 0;
+  width: 1200px;
+  margin: auto;
 }
 
 .case-base p {
-  color: #666;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  color: #808080;
+  font-size: 21pt;
+  line-height: 36pt;
   margin: 4px;
 }
 
 .case-box {
   background-image: url("../assets/solution/应用案例背景.jpg");
-  padding: 40px 10%;
 }
 
 .box-div {
-  padding: 40px 10%;
+  width: 1025px;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
+  padding: 90px 0;
 }
 </style>
