@@ -1,5 +1,5 @@
 <template>
-  <div class="item-base">
+  <div class="item-base" @click="$emit('click')">
     <img class="item-image" :src="image" :alt="name">
     <div class="absolute"></div>
     <img class="item-icon" :src="icon" :alt="name">
