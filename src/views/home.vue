@@ -5,7 +5,6 @@
         <p class="p1">产品解决方案</p>
       </div>
       <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
-        <!-- <solution-item v-for="item in list" :key="item.src" :src="item.image" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item> -->
         <solution-item v-for="(item) in list" :key="item.icon" v-bind="item" @click="click(item)"> </solution-item>
         <div v-for='item in (3-list.length)' :key="item" style="width:380px;height:460px;"></div>
       </div>
@@ -13,7 +12,6 @@
     <div style="height:150px;margin:120px 0 0 0;">
       <img style="width: 100%;height:150px;" src="../assets/solution/首页-应用案例.jpg" />
       <p class="img-p1">NEXMILE SOLUTIONS</p>
-      <!-- <p class="img-p2">广泛应用于通讯设备、航空航天、医疗、电子、机械制造、轨道交通、新能源等行业</p> -->
     </div>
     <div style="background:white;">
       <div class="info">
@@ -21,12 +19,6 @@
         <div class="home-row">
           <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
         </div>
-        <!-- <p class='p2'>NEXMILE产品广泛应用于消费电子，智能家居，通讯设施、军工设备、医疗设备、</p>
-        <p class='p2'>新能源、轨道交通，汽车等工业领域</p> -->
-
-        <!-- <div class="information">
-        <InformationItem v-for="(item,index) in infoList" :key="index" v-bind='item' @click="clickInfo(item)"></InformationItem>
-      </div> -->
       </div>
       <hr class="border">
       <div class="info ">
