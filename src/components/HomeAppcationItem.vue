@@ -1,5 +1,5 @@
 <template>
-  <div class="backgroud" :style="getStyle">
+  <div @click='$emit("click")' class="backgroud" :style="getStyle">
     <div class="item-base">
       <div class="box">
         <p class="p1">{{title}}</p>

@@ -1,12 +1,10 @@
 <template>
   <div class="item-base">
-    <img class="item-image" :src="image" :alt="content">
+    <img class="item-image" :src="image" :alt="name">
     <div class="absolute"></div>
-    <!-- <img v-show="hover" class="item-image" :src="hoverImage" :alt="content"> -->
-    <img class="item-icon" :src="icon" :alt="content">
-    <!-- <img v-show="hover" class="item-icon" :src="icon" :alt="content"> -->
+    <img class="item-icon" :src="icon" :alt="name">
     <div class="p">
-      <p>{{content}}</p>
+      <p>{{name}}</p>
       <p>解决方案</p>
     </div>
   </div>
@@ -16,10 +14,8 @@
 export default {
   props: {
     image: String,
-    hoverImage: String,
     icon: String,
-    hoverIcon: String,
-    content: String
+    name: String
   }
 }
 </script>

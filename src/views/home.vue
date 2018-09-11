@@ -24,7 +24,7 @@
       <div class="info ">
         <p class='p1'>应用领域</p>
         <div class="home-row">
-          <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item"></appcation-item>
+          <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item" @click="clickAPP"></appcation-item>
         </div>
         <div class="more" @click="moreAPP">
           <div>
@@ -47,38 +47,7 @@ export default {
   components: { SolutionItem, InformationItem, ServiceItem, AppcationItem },
   data () {
     return {
-      list: [
-        {
-          image: require('../assets/newSolution/GuardEM-1.jpg'),
-          hoverImage: require('../assets/newSolution/GuardEM-2.jpg'),
-          icon: require('../assets/newSolution/logo-01.png'),
-          content: 'EMC电磁兼容'
-        },
-        {
-          image: require('../assets/newSolution/Thermbus-1.jpg'),
-          hoverImage: require('../assets/newSolution/Thermbus-2.jpg'),
-          icon: require('../assets/newSolution/logo-02.png'),
-          content: 'EMC电磁兼容'
-        },
-        {
-          image: require('../assets/newSolution/Ottico-1.jpg'),
-          hoverImage: require('../assets/newSolution/Ottico-2.jpg'),
-          icon: require('../assets/newSolution/logo-03.png'),
-          content: 'EMC电磁兼容'
-        },
-        {
-          image: require('../assets/newSolution/Bastape-1.jpg'),
-          hoverImage: require('../assets/newSolution/Bastape-2.jpg'),
-          icon: require('../assets/newSolution/logo-04.png'),
-          content: 'EMC电磁兼容'
-        },
-        {
-          image: require('../assets/newSolution/Stoptan-1.jpg'),
-          hoverImage: require('../assets/newSolution/Stoptan-2.jpg'),
-          icon: require('../assets/newSolution/logo-05.png'),
-          content: 'EMC电磁兼容'
-        }
-      ],
+      list: [],
       serviceList: [
         {
           image: require('../assets/service/实验室服务.jpg'),
@@ -133,23 +102,7 @@ export default {
           content: '粘接类材料广泛应用于工业， 日常消费等众多领域，有常温 粘贴，热熔加热粘贴，业态固 化粘贴，特殊粘贴等'
         }
       ],
-      infoList: [],
-      caseList: [
-        {
-          name: '消费电子',
-          image: require('../assets/solution/产品解决方案-04.jpg')
-        },
-        {
-          name: '新能源',
-          image: require('../assets/solution/产品解决方案-05.jpg')
-
-        },
-        {
-          name: '军工',
-          image: require('../assets/solution/产品解决方案-06.jpg')
-
-        }
-      ]
+      infoList: []
     }
   },
   computed: {
@@ -184,13 +137,13 @@ export default {
     }
   },
   created () {
-    // request.getCategroy(0).then(res => {
-    //   if (res.status === 200 && res.data.status === 200) {
-    //     this.list = res.data.data.slice(0, 3)
-    //   } else {
-    //     alert('请求网络错误')
-    //   }
-    // })
+    request.getCategroy(0).then(res => {
+      if (res.status === 200 && res.data.status === 200) {
+        this.list = res.data.data
+      } else {
+        alert('请求网络错误')
+      }
+    })
 
     request.getNews(0, 3).then(result => {
       if (result.data.status === 200) {
