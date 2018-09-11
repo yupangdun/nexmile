@@ -34,16 +34,19 @@ export default {
 
 <style scoped>
 .base {
+  position: relative;
   background-color: white;
-  margin: 20px;
   padding: 40px;
+  margin: 20px 0;
+  height: 360px;
 }
 .div {
   display: flex;
   flex-direction: row;
 }
 .img {
-  height: 250px;
+  height: 360px;
+  width: 520px;
 }
 .text {
   padding: 0px 40px;
@@ -59,19 +62,21 @@ export default {
   margin: 0;
   line-height: 40px;
   width: 180px;
-  position: relative;
-  right: -40px;
+  position: absolute;
+  top: 380px;
+  right: 0px;
   color: white;
   background-color: #7dbe4e;
 }
 .h1 {
-  font-size: 1.5rem;
+  font-size: 20pt;
   margin: 0px;
   color: #0055aa;
 }
 .p {
   color: #666;
-  line-height: 2rem;
+  font-size: 12pt;
+  line-height: 24pt;
 }
 
 li {
@@ -79,7 +84,7 @@ li {
 }
 
 li span {
-  line-height: 2rem;
+  line-height: 24pt;
   color: #666;
 }
 </style>

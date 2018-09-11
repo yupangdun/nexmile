@@ -5,10 +5,45 @@
       <p class="header-p-2">{{item.introduction}}</p>
     </div>
 
-    <div v-for='(elist,i) in emcList' :key='i' style="display:flex; flex-direction: row;padding:0 10%;">
-      <emc-item v-for="item in elist" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='item.label' @click="click(item)"></emc-item>
-      <div style="  flex: 1;  padding: 40px 0 40px 40px;" v-for="i in (4-elist.length)" :key='i'></div>
+    <div class="list">
+      <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click="click(item)"></emc-item>
     </div>
+    <div class="category-footer" @click='outerVisible=true'>
+      <p>查看更多解决方案 ></p>
+    </div>
+
+    <el-dialog :visible.sync="outerVisible">
+      <div>
+        <p class="h-p">联系我们</p>
+        <div>
+          <p>称呼</p>
+          <input type="text" v-model="name">
+        </div>
+        <div>
+          <p>公司</p>
+          <input type="text" v-model="company">
+        </div>
+        <div>
+          <p>电话</p>
+          <input type="text" v-model="tel">
+        </div>
+        <div>
+          <p>邮箱</p>
+          <input type="text" v-model="email">
+        </div>
+        <div>
+          <p>国家/城市</p>
+          <input type="text" v-model="country">
+        </div>
+        <div>
+          <p>请填写您的需求</p>
+          <textarea type="text" v-model="other" />
+        </div>
+        <div>
+          <p @click="post">提交信息</p>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -19,26 +54,30 @@ export default {
   data () {
     return {
       item: {},
-      list: []
-    }
-  },
-  computed: {
-    emcList () {
-      let list = []
-      for (let i = 0; i < Math.ceil(this.list.length / 4); i++) {
-        for (let n = i * 4; n < (i + 1) * 4 && n < this.list.length; n++) {
-          if (!list[i]) {
-            list[i] = []
-          }
-          list[i].push(this.list[n])
-        }
-      }
-      return list
+      list: [],
+      outerVisible: false,
+      name: '',
+      company: '',
+      tel: '',
+      email: '',
+      country: '',
+      other: ''
     }
   },
   methods: {
     click (item) {
       this.$router.push({ name: 'CategoryItem', query: item })
+    },
+    post () {
+      console.log('============>', {
+        name: this.name,
+        company: this.company,
+        tel: this.tel,
+        email: this.email,
+        country: this.country,
+        other: this.other
+      })
+      this.outerVisible = false
     }
   },
   created () {
@@ -57,20 +96,94 @@ export default {
 <style scoped>
 .emc-header {
   background-color: white;
-  padding: 10px 10%;
+  margin: auto;
+  height: 255px;
 }
 
 .emc-header p {
-  padding: 0px 40px;
+  margin: 0;
+  width: 1200px;
+  margin: auto;
 }
 
 .header-p {
-  font-size: 2rem;
+  font-size: 32pt;
+  line-height: 80pt;
+  color: #4d4d4d;
 }
 
 .header-p-2 {
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 16pt;
+  line-height: 26pt;
   color: #808080;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  padding: 70px 0 50px;
+}
+
+.category-footer {
+  height: 80px;
+  width: 100%;
+  background: #0055aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-footer p {
+  color: white;
+  font-size: 21pt;
+}
+.h-p {
+  font-size: 36pt;
+  color: #0055aa;
+}
+.el-dialog__body p {
+  margin: 0;
+}
+
+.el-dialog__body > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-dialog__body > div > div {
+  display: flex;
+  width: 600px;
+  margin: 10px;
+}
+.el-dialog__body > div > div > p {
+  font-size: 13pt;
+  color: #4d4d4d;
+  width: 160px;
+}
+.el-dialog__body > div > div > input,
+.el-dialog__body > div > div > textarea {
+  flex: 1;
+  font-size: 13pt;
+  color: #4d4d4d;
+}
+
+textarea {
+  height: 100px;
+}
+.el-dialog__body > div > div:last-child {
+  justify-content: center;
+  align-items: center;
+}
+.el-dialog__body > div > div:last-child p {
+  text-align: center;
+  font-size: 14pt;
+  color: white;
+  line-height: 30pt;
+  background-color: #7dbe41;
 }
 </style>

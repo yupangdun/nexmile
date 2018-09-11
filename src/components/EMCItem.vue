@@ -1,19 +1,16 @@
 <template>
-  <div class="div">
-    <div style="background-color:white;height:100%;" @click="$emit('click')">
-      <div class="img-div">
-        <img :src="src">
-      </div>
-      <div class="label-div">
-        <p class="p1">{{label}}</p>
-        <p class="p2">{{getContent}}</p>
-      </div>
+  <div class="div" @click="$emit('click')" :style="{  flexDirection:first?'row':'row-reverse'  }">
+    <img :src="src">
+    <div>
+      <p class="item-p1">{{label}}</p>
+      <p class="item-p2">{{getContent}}</p>
     </div>
   </div>
 </template>
 <script>
 export default {
   props: {
+    first: Boolean,
     src: String,
     label: String,
     subLabel: String
@@ -32,28 +29,29 @@ export default {
 
 <style scoped>
 .div {
-  flex: 1;
-  padding: 40px 0 40px 40px;
+  width: 1200px;
+  height: 360px;
+  display: flex;
+  background: white;
+  margin-bottom: 50px;
 }
-
-.img-div img {
-  width: 100%;
+.div img {
+  width: 600px;
+  height: 360px;
 }
-.label-div {
+.div div {
+  width: 600px;
+  height: 320px;
   padding: 20px;
 }
-.label-div p1,
-.label-div p2 {
-  letter-spacing: 2px;
+.item-p1 {
+  color: #0055aa;
+  font-size: 26pt;
 }
 
-.p1 {
-  font-size: 1.4rem;
-  color: #0055aa;
-}
-.p2 {
-  font-size: 1rem;
-  color: #808080;
-  line-height: 2rem;
+.item-p2 {
+  color: #4d4d4d;
+  font-size: 17pt;
+  line-height: 30pt;
 }
 </style>

@@ -42,19 +42,25 @@ export default {
 <style scoped>
 .emc-header {
   background-color: white;
-  padding: 10px 10%;
+  margin: auto;
+  height: 255px;
 }
 
 .emc-header p {
-  padding: 0px 40px;
+  margin: 0;
+  width: 1200px;
+  margin: auto;
 }
 
 .header-p {
-  font-size: 2rem;
+  font-size: 32pt;
+  line-height: 80pt;
+  color: #4d4d4d;
 }
 
 .header-p-2 {
-  font-size: 1.4rem;
+  font-size: 16pt;
+  line-height: 26pt;
   color: #808080;
 }
 </style>
