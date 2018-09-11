@@ -24,23 +24,23 @@
 <style scoped>
 .p1 {
   position: relative;
-  top: -280px;
+  top: -300px;
   color: white;
   font-size: 40pt;
   letter-spacing: 1px;
   margin: 0px;
-  text-shadow: 1px 1px 1px #ffffff;
+  /* text-shadow: 1px 1px 1px #ffffff; */
 }
 
 .p2 {
   position: relative;
-  top: -264px;
+  top: -284px;
   color: white;
   font-size: 21pt;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0 20%;
-  text-shadow: 1px 1px 1px #ffffff;
+  /* text-shadow: 1px 1px 1px #ffffff; */
 }
 </style>
 <script>
