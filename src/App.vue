@@ -12,20 +12,20 @@
     <el-footer class="footer">
       <div class="footer-div">
         <div>
-          <p style="font-size: 1.5rem;margin: 20px 0;">关于NEXMILE</p>
-          <p>为了工业和商业用户提供功能性原材料以及加工解决方案的供应商，以及配套企业服务，技术服务，解决方案的一体化供应链伙伴。 </p>
+          <p class="footer-h1">关于NEXMILE</p>
+          <p class="footer-content">为了工业和商业用户提供功能性原材料以及加工解决方案的供应商，以及配套企业服务，技术服务，解决方案的一体化供应链伙伴。 </p>
           <p style="flex: 1;"></p>
-          <p>睿惢思工业科技（苏州）有限公司 版权所有 苏ICP备17027514号</p>
+          <p class="footer-remark">睿惢思工业科技（苏州）有限公司 版权所有 苏ICP备17027514号</p>
         </div>
         <div class="address">
-          <p style="font-size: 1.5rem;margin: 20px 0;">联系我们 </p>
-          <p>
+          <p class="footer-h1">联系我们 </p>
+          <p class="footer-content">
             <img src="./assets/页尾-1.png" />苏州工业园区唯新路58号 启迪人工智能产业园31#第二单元
           </p>
-          <p>
+          <p class="footer-content">
             <img src="./assets/页尾-2.png" />0512-65927151
           </p>
-          <p>
+          <p class="footer-content">
             <img src="./assets/页尾-3.png" />info@nex-mile.com
           </p>
           <div>
@@ -63,11 +63,6 @@ export default {
   src: url("./assets/font/iconfont.ttf?t=1533735893629") format("truetype"),
     url("./assets/font/iconfont.svg?t=1533735893629#iconfont") format("svg");
 }
-/* @media screen and (min-width: 800px) {
-  .header-icon {
-    flex: 1;
-  }
-} */
 
 .header {
   height: 530px !important;
@@ -127,24 +122,39 @@ export default {
   height: 100%;
   flex-direction: row;
   overflow: hidden;
-  padding: 0 10%;
+  width: 1200px;
+  margin: auto;
 }
 
-.footer-div div {
-  flex: 1;
+.footer-div > div {
   display: flex;
   flex-direction: column;
-  padding: 40px 40px 20px 40px;
+  width: 496px;
+  overflow: hidden;
+  padding: 56px 0 0 0;
+}
+.footer-div div:first-child {
+  margin-right: 152px;
 }
 
-.footer-div p {
-  font-size: 1.1rem;
-  line-height: 36px;
-  margin: 0;
+.footer-h1 {
+  font-size: 18pt;
   color: white;
 }
 
-.address img {
+.footer-content {
+  font-size: 13pt;
+  color: white;
+  margin: 0;
+  line-height: 24pt;
+}
+.footer-remark {
+  font-size: 12pt;
+  color: white;
+  line-height: 24pt;
+}
+
+.address p > img {
   max-width: 16px;
   max-height: 16px;
   margin: 0px 10px 0 0;
@@ -157,9 +167,7 @@ export default {
 }
 
 .address div img {
-  max-width: 70px;
-  max-height: 70px;
-  height: 58px;
-  margin-right: 30px;
+  height: 45px;
+  margin-right: 20px;
 }
 </style>
