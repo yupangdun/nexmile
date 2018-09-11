@@ -1,7 +1,8 @@
 <template>
   <div class="div">
     <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
-      <solution-item v-for="item in list" :key="item.src" :src="item.image" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item>
+      <solution-item v-for="item in list" :key="item.src" :src="item.icon" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item>
+      <div v-for='item in (3-list.length)' :key="item" style="width:380px;height:320px;"></div>
     </div>
   </div>
 </template>

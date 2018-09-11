@@ -30,8 +30,11 @@ export default {
 
 <style scoped>
 .c-base {
-  margin: 0 10%;
-  padding: 60px;
+  background: white;
+}
+.c-base > div:first-child {
+  width: 1025px;
+  margin: auto;
 }
 .c-base .div {
   display: flex;

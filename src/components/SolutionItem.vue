@@ -39,10 +39,15 @@ export default {
   justify-content: center;
   align-items: center;
   background: white;
+  overflow: hidden;
+}
+
+.img img {
+  height: 30px;
 }
 
 .p {
-  height: 120px;
+  height: 80px;
   background: #002d55;
   padding: 20px;
 }
@@ -63,7 +68,7 @@ p {
   content: "\e61c";
   color: white;
   position: relative;
-  top: 14px;
+  top: -30px;
   left: calc(100% - 34px);
   line-height: 0px;
 }
