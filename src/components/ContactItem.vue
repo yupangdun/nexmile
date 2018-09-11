@@ -23,12 +23,12 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 img {
   width: 100px;
+  margin-top: 40px;
 }
 .address {
   color: #7dbe41;
@@ -37,7 +37,7 @@ img {
 
 .content {
   color: #4d4d4d;
-  font-size: 14pt;
+  font-size: 12pt;
   margin: 0;
 }
 </style>
