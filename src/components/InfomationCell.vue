@@ -42,8 +42,8 @@ export default {
 <style scoped>
 .ibase {
   display: flex;
-  height: 180px;
-  margin: 40px 0;
+  height: 125px;
+  margin: 0 0 70px 0;
 }
 .div-1 {
   border-right: 1px solid #eee;
@@ -52,31 +52,34 @@ export default {
   justify-content: center;
   align-items: center;
   width: 180px;
+  height: 125px;
 }
 .date-day {
-  font-size: 6rem;
+  font-size: 60pt;
   color: #7dbe41;
   margin: 0;
 }
 
 .date-month {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 15pt;
+  color: #808080;
   margin: 0;
 }
 
 .name {
-  font-size: 1.8rem;
+  font-size: 20pt;
+  color: #4d4d4d;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   margin: 0;
 }
 
 .content {
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 14pt;
+  line-height: 24pt;
   color: #666;
   height: 80px;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .content p {
@@ -85,7 +88,8 @@ export default {
 
 .div-2 {
   flex: 1;
-  padding: 30px 40px;
-  height: 120px;
+  padding: 0 40px;
+  height: 125px;
+  overflow: hidden;
 }
 </style>

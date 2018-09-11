@@ -1,11 +1,13 @@
 <template>
   <div class="base">
-    <p class="h1">{{item.title}}</p>
-    <p class="date">{{item.date}}</p>
-    <hr>
     <div>
-      <img class="img" :src="item.image" alt="">
-      <p class="content">{{item.content}}</p>
+      <p class="h1">{{item.title}}</p>
+      <p class="date">{{item.date}}</p>
+      <hr>
+      <div>
+        <img class="img" :src="item.image" alt="">
+        <p class="content">{{item.content}}</p>
+      </div>
     </div>
     <!-- <hr>
     <div class="info-footer">
@@ -31,31 +33,39 @@ export default {
 
 <style scoped>
 .base {
-  margin: 0 10%;
-  padding: 40px 100px;
+  background: white;
+  padding: 70px 0 55px;
 }
 
+.base > div:first-child {
+  width: 1025px;
+  margin: auto;
+}
+
+p {
+  margin: 0;
+}
 .h1 {
-  font-size: 1.6rem;
+  font-size: 24pt;
   color: #0055aa;
   margin-bottom: 0px;
 }
 .date {
-  color: #666;
-  font-size: 1.2rem;
+  color: #4d4d4d;
+  font-size: 14pt;
   margin: 10px 0 40px;
 }
 .img {
   float: left;
-  width: 400px;
+  width: 500px;
   margin: 40px 40px 40px 0;
 }
 
 .content {
   padding: 40px 40px 40px 0;
-  font-size: 1.2rem;
-  color: #666;
-  line-height: 2.5rem;
+  font-size: 17pt;
+  color: #4d4d4d;
+  line-height: 30pt;
 }
 
 .info-footer {

@@ -1,6 +1,8 @@
 <template>
   <div class="base">
-    <infomation-cell v-for="(item,index) in list" :key='index' v-bind="item" @click="click(item)"></infomation-cell>
+    <div>
+      <infomation-cell v-for="(item,index) in list" :key='index' v-bind="item" @click="click(item)"></infomation-cell>
+    </div>
     <div class='pagination'>
       <el-pagination :page-size="10" :pager-count="7" layout="prev, pager, next" :total="total" :current-page.sync="value" :hack="change"> </el-pagination>
     </div>
@@ -44,12 +46,31 @@ export default {
 
 <style scoped>
 .base {
-  margin: 0 10%;
-  padding: 0 80px;
+  background: white;
+  padding: 70px 0 55px;
+}
+
+.base > div:first-child {
+  width: 1025px;
+  margin: auto;
 }
 .pagination {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
+}
+</style>
+<style>
+.pagination .number {
+  font-size: 18pt !important;
+}
+.pagination .el-icon {
+  font-size: 18pt !important;
+}
+.number.active {
+  color: #7dbe41 !important;
+}
+.number {
+  color: #808080;
 }
 </style>
