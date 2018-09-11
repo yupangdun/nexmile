@@ -2,7 +2,6 @@
   <div class="div">
     <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
       <solution-item v-for="item in list" :key="item.src" :src="item.image" :label='item.name' :alt='item.name' @click="click(item)"> </solution-item>
-      <div v-for='item in (3-list.length)' :key="item" style="flex: 1;padding: 0px 0px 0px 40px;"></div>
     </div>
   </div>
 </template>
@@ -51,7 +50,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10%;
+  width: 1200px;
+  margin: auto;
 }
 
 .first-list {
@@ -59,11 +59,13 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 80px 0;
+  justify-content: space-between;
 }
 .other-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 0 100px 0;
+  justify-content: space-between;
 }
 </style>

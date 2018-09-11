@@ -1,9 +1,10 @@
 <template>
-  <div class="item-base" @mouseleave="hover=false" @mouseenter="hover=true">
-    <img v-show="!hover" class="item-image" :src="image" :alt="content">
-    <img v-show="hover" class="item-image" :src="hoverImage" :alt="content">
-    <img v-show="!hover" class="item-icon" :src="icon" :alt="content">
-    <img v-show="hover" class="item-icon" :src="icon" :alt="content">
+  <div class="item-base">
+    <img class="item-image" :src="image" :alt="content">
+    <div class="absolute"></div>
+    <!-- <img v-show="hover" class="item-image" :src="hoverImage" :alt="content"> -->
+    <img class="item-icon" :src="icon" :alt="content">
+    <!-- <img v-show="hover" class="item-icon" :src="icon" :alt="content"> -->
     <div class="p">
       <p>{{content}}</p>
       <p>解决方案</p>
@@ -19,13 +20,7 @@ export default {
     icon: String,
     hoverIcon: String,
     content: String
-  },
-  data () {
-    return {
-      hover: false
-    }
   }
-
 }
 </script>
 
@@ -34,6 +29,7 @@ export default {
   width: 380px;
   height: 460px;
   background: white;
+  position: relative;
 }
 .item-base:hover {
   background: #0055aa;
@@ -44,15 +40,22 @@ export default {
   color: white;
 }
 
-.hover-image {
-  position: relative;
-  top: -230px;
+.item-base:hover .absolute {
+  background: rgba(255, 255, 255, 0);
 }
 
 .item-image {
   height: 230px;
   width: 100%;
 }
+.absolute {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 230px;
+  background: linear-gradient(rgba(0, 85, 170, 0), rgba(0, 45, 85, 1));
+}
+
 .item-icon {
   height: 24px;
   margin: 42px 20px;
