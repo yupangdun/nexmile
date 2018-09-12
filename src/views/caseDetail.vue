@@ -95,7 +95,7 @@ export default {
 }
 
 .case-base-div-1 {
-  width: 845px;
+  width: 730px;
   background-color: white;
   padding: 40px;
 }
@@ -104,8 +104,8 @@ export default {
 }
 
 .case-base-div-2 {
-  width: 330px;
-  margin-left: 25px;
+  width: 300px;
+  margin-left: 20px;
 }
 
 .case-base-div-2-1 {
@@ -122,6 +122,7 @@ export default {
   font-size: 14pt;
   color: white;
   line-height: 40px;
+  margin: 0;
 }
 
 .p-div p {

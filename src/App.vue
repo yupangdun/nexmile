@@ -178,4 +178,8 @@ export default {
   height: 45px;
   margin-right: 20px;
 }
+
+.el-dialog {
+  width: 700px;
+}
 </style>

@@ -5,8 +5,41 @@
       <p class="header-p-2">{{item.introduction}}</p>
     </div>
     <div style="display:flex; flex-direction:column;padding:40px 10%;">
-      <CategoryItem v-for="(item,index) in list" :key="index" v-bind="item" @click="click(item)"></CategoryItem>
+      <CategoryItem v-for="(item,index) in list" :key="index" v-bind="item" @click="outerVisible=true"></CategoryItem>
     </div>
+
+    <el-dialog :visible.sync="outerVisible">
+      <div>
+        <p class="h-p">联系我们</p>
+        <div>
+          <p>称呼</p>
+          <input type="text" v-model="name">
+        </div>
+        <div>
+          <p>公司</p>
+          <input type="text" v-model="company">
+        </div>
+        <div>
+          <p>电话</p>
+          <input type="text" v-model="tel">
+        </div>
+        <div>
+          <p>邮箱</p>
+          <input type="text" v-model="email">
+        </div>
+        <div>
+          <p>国家/城市</p>
+          <input type="text" v-model="country">
+        </div>
+        <div>
+          <p>请填写您的需求</p>
+          <textarea type="text" v-model="other" />
+        </div>
+        <div>
+          <p @click="post">提交信息</p>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -18,12 +51,30 @@ export default {
   data () {
     return {
       item: {},
-      list: []
+      list: [],
+      outerVisible: false,
+      name: '',
+      company: '',
+      tel: '',
+      email: '',
+      country: '',
+      other: ''
     }
   },
   methods: {
     click (item) {
       this.$router.push({ name: 'CategoryDetail', query: item })
+    },
+    post () {
+      console.log('============>', {
+        name: this.name,
+        company: this.company,
+        tel: this.tel,
+        email: this.email,
+        country: this.country,
+        other: this.other
+      })
+      this.outerVisible = false
     }
   },
   created () {
@@ -62,5 +113,65 @@ export default {
   font-size: 16pt;
   line-height: 26pt;
   color: #808080;
+}
+
+.category-footer {
+  height: 80px;
+  width: 100%;
+  background: #0055aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-footer p {
+  color: white;
+  font-size: 21pt;
+}
+.h-p {
+  font-size: 36pt;
+  color: #0055aa;
+}
+.el-dialog__body p {
+  margin: 0;
+}
+
+.el-dialog__body > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-dialog__body > div > div {
+  display: flex;
+  width: 600px;
+  margin: 10px;
+}
+.el-dialog__body > div > div > p {
+  font-size: 13pt;
+  color: #4d4d4d;
+  width: 160px;
+}
+.el-dialog__body > div > div > input,
+.el-dialog__body > div > div > textarea {
+  flex: 1;
+  font-size: 13pt;
+  color: #4d4d4d;
+}
+
+textarea {
+  height: 100px;
+}
+.el-dialog__body > div > div:last-child {
+  justify-content: center;
+  align-items: center;
+}
+.el-dialog__body > div > div:last-child p {
+  text-align: center;
+  font-size: 14pt;
+  color: white;
+  line-height: 30pt;
+  background-color: #7dbe41;
 }
 </style>

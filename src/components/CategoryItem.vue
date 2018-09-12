@@ -36,7 +36,7 @@ export default {
 .base {
   position: relative;
   background-color: white;
-  padding: 40px;
+  padding: 20px;
   margin: 20px 0;
   height: 360px;
 }
@@ -76,7 +76,7 @@ export default {
 .p {
   color: #666;
   font-size: 12pt;
-  line-height: 24pt;
+  line-height: 20pt;
 }
 
 li {
@@ -84,7 +84,7 @@ li {
 }
 
 li span {
-  line-height: 24pt;
+  line-height: 20pt;
   color: #666;
 }
 </style>

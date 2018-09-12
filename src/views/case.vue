@@ -86,7 +86,7 @@ export default {
 }
 
 .box-div {
-  width: 1025px;
+  width: 960px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

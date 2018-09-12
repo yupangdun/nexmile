@@ -22,8 +22,8 @@ export default {
   justify-content: center;
   align-items: center;
   border: 1px solid #808080;
-  width: 338px;
-  height: 191px;
+  width: 318px;
+  height: 181px;
 }
 
 .base img {
