@@ -67,16 +67,21 @@ export default {
 .header {
   height: 530px !important;
 }
-
+.fiexd {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
 .header-div {
   height: 105px;
-  /* padding-left: 10%; */
   width: 1200px;
   margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .header-icon {
@@ -107,6 +112,9 @@ export default {
   background: #f2f2f2;
 }
 
+.el-carousel {
+  margin-top: 105px;
+}
 .el-carousel__container {
   height: 425px;
 }
