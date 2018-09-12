@@ -38,7 +38,7 @@ export default {
 }
 
 .base > div:first-child {
-  width: 1025px;
+  width: 960px;
   margin: auto;
 }
 

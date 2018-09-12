@@ -6,7 +6,7 @@
       <contact-item :image='image3' name="传真" content1="0512-65920039"></contact-item>
       <contact-item :image='image4' name="企业邮箱" content1="info@nex-mile.com"></contact-item>
     </div>
-    <div style="width:1025px;margin:auto;padding:70px 0 85px;">
+    <div style="width:960px;margin:auto;padding:70px 0 85px;">
       <iframe src="/static/map.html" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
   background: white;
 }
 .c-base > div:first-child {
-  width: 1025px;
+  width: 960px;
   margin: auto;
 }
 .c-base .div {
@@ -41,6 +41,6 @@ export default {
 }
 iframe {
   width: 100%;
-  height: 420px;
+  height: 395px;
 }
 </style>

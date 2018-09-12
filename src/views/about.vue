@@ -41,7 +41,7 @@ export default {
   background: white;
 }
 .base > div {
-  width: 1025px;
+  width: 960px;
   margin: auto;
   padding: 70px 0 100px;
 }
