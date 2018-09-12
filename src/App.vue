@@ -77,7 +77,7 @@ export default {
 }
 .header-div {
   height: 105px;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -130,7 +130,7 @@ export default {
   height: 100%;
   flex-direction: row;
   overflow: hidden;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
 }
 

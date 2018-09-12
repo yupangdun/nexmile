@@ -22,8 +22,8 @@ export default {
 
 <style scoped>
 .item-base {
-  width: 380px;
-  height: 460px;
+  width: 320px;
+  height: 400px;
   background: white;
   position: relative;
 }
@@ -41,20 +41,20 @@ export default {
 }
 
 .item-image {
-  height: 230px;
+  height: 200px;
   width: 100%;
 }
 .absolute {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 230px;
+  height: 200px;
   background: linear-gradient(rgba(0, 85, 170, 0), rgba(0, 45, 85, 1));
 }
 
 .item-icon {
   height: 24px;
-  margin: 42px 20px;
+  margin: 26px 20px;
 }
 .p {
   padding: 18px 20px 0;
@@ -69,8 +69,8 @@ export default {
   content: "\e61c";
   color: #4d4d4d;
   position: relative;
-  left: 300px;
-  top: -40px;
+  left: 240px;
+  top: -20px;
   line-height: 0px;
 }
 

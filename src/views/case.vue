@@ -70,7 +70,7 @@ export default {
 <style scoped>
 .case-base {
   padding: 40px 0;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
 }
 

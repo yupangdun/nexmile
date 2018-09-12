@@ -24,7 +24,7 @@ export default {
 </script>
 <style scoped>
 .item-base {
-  width: 380px;
+  width: 320px;
   height: 320px;
 }
 
@@ -34,7 +34,7 @@ export default {
 
 .img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;

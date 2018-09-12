@@ -25,13 +25,13 @@ export default {
 .item-base {
   display: flex;
   flex-direction: row;
-  width: 565px;
+  width: 475px;
   height: 130px;
   margin-bottom: 50px;
 }
 
 .item-image-div {
-  width: 180px;
+  width: 170px;
   height: 130px;
   overflow: hidden;
 }

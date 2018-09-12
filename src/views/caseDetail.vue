@@ -87,7 +87,7 @@ export default {
 
 <style ccoped>
 .case-base {
-  width: 1200px;
+  width: 1050px;
   margin: auto;
   display: flex;
   flex-direction: row;

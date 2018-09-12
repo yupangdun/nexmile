@@ -28,8 +28,8 @@ export default {
 
 <style scoped>
 .backgroud {
-  width: 275px;
-  height: 375px;
+  width: 240px;
+  height: 325px;
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -70,9 +70,9 @@ export default {
 
 .box {
   padding: 20px;
-  height: 375px;
+  height: 325px;
   position: relative;
-  top: 240px;
+  top: 200px;
   transition: all 0.3s ease-out;
   overflow: hidden;
 }
@@ -86,7 +86,7 @@ export default {
   content: "\e600";
   color: white;
   position: relative;
-  left: 210px;
+  left: 180px;
   top: 40px;
   line-height: 0px;
 }

@@ -102,7 +102,7 @@ export default {
 
 .emc-header p {
   margin: 0;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
 }
 
@@ -121,7 +121,7 @@ export default {
 .list {
   display: flex;
   flex-direction: row;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
   flex-wrap: wrap;
   padding: 70px 0 50px;

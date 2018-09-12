@@ -29,19 +29,19 @@ export default {
 
 <style scoped>
 .div {
-  width: 1200px;
-  height: 360px;
+  width: 1050px;
+  height: 320px;
   display: flex;
   background: white;
   margin-bottom: 50px;
 }
 .div img {
-  width: 600px;
-  height: 360px;
+  width: 525px;
+  height: 320px;
 }
 .div div {
-  width: 600px;
-  height: 320px;
+  width: 525px;
+  height: 280px;
   padding: 20px;
 }
 .item-p1 {

@@ -57,7 +57,7 @@ export default {
 .base {
   background-color: white;
   padding: 20px 0;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
 }
 .c-row {

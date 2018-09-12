@@ -6,7 +6,7 @@
       </div>
       <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
         <solution-item v-for="(item) in list" :key="item.icon" v-bind="item" @click="click(item)"> </solution-item>
-        <div v-for='item in (3-list.length)' :key="item" style="width:380px;height:460px;"></div>
+        <div v-for='item in (3-list.length)' :key="item" style="width:320px;height:460px;"></div>
       </div>
     </div>
     <div style="height:150px;margin:120px 0 0 0;">
@@ -156,7 +156,7 @@ export default {
 
 <style scoped>
 .base {
-  width: 1200px;
+  width: 1050px;
   margin: auto;
   /* background-color: white; */
 }
@@ -227,7 +227,7 @@ export default {
 }
 
 .info {
-  width: 1200px;
+  width: 1050px;
   margin: auto;
   /* padding: 0 10%;
   background-color: #fff; */

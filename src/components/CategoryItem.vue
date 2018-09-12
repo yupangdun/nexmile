@@ -63,7 +63,7 @@ export default {
   line-height: 40px;
   width: 180px;
   position: absolute;
-  top: 380px;
+  top: 320px;
   right: 0px;
   color: white;
   background-color: #7dbe4e;

@@ -48,7 +48,7 @@ export default {
 
 .emc-header p {
   margin: 0;
-  width: 1200px;
+  width: 1050px;
   margin: auto;
 }
 
