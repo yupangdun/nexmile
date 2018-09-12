@@ -29,7 +29,7 @@ export default {
 }
 
 .tab-div div {
-  margin: 0 20px;
+  margin: 0 10px;
   cursor: pointer;
 }
 

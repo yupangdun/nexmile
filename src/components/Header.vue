@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <el-carousel arrow="never" trigger="click">
+    <el-carousel arrow="never" trigger="click" :indicator-position='$store.state.index?"none":""'>
       <el-carousel-item v-for="(item,index) in bannerList" indicator-position="none" :key="index" style="text-align: center;">
         <img style="width: 100%;height: 100%;" :src="item.src" />
         <p class="p1">{{item.h1}}</p>
@@ -51,8 +51,15 @@ export default {
   components: { 'c-tab': Tab },
   data () {
     return {
-      icon: require('../assets/logo.png'),
-      bannerList: [
+      icon: require('../assets/logo.png')
+    }
+  },
+  computed: {
+    header () {
+      return this.$store.getters.header
+    },
+    bannerList () {
+      let list = [
         {
           src: require('../assets/banner/banner3.jpg'),
           h1: 'OUR VISION',
@@ -79,11 +86,11 @@ export default {
           h2: '深入挖掘功能材料行业特点，以合理的价格，优质的产品，快速的响应，优质的供应链管理，提供给客户全新非凡的价值体验'
         }
       ]
-    }
-  },
-  computed: {
-    header () {
-      return this.$store.getters.header
+      if (this.$store.state.index) {
+        list = [this.$store.getters.header]
+      } else {
+      }
+      return list
     }
   },
   methods: {
