@@ -38,7 +38,7 @@ export default {
 }
 
 .tab-div span {
-  font-size: 16pt;
+  font-size: 16px;
   color: #4d4d4d;
 }
 </style>

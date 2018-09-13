@@ -60,12 +60,12 @@ p {
 }
 
 .p1 {
-  font-size: 17pt;
+  font-size: 17px;
   color: #0055aa;
 }
 .p2 {
   font-size: 15px;
-  line-height: 24pt;
+  line-height: 24px;
   color: #4d4d4d;
 }
 </style>

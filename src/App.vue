@@ -98,7 +98,7 @@ export default {
 
 .language {
   margin: 0 20px;
-  font-size: 16pt;
+  font-size: 16px;
   color: #7dbe4e;
 }
 
@@ -146,20 +146,20 @@ export default {
 }
 
 .footer-h1 {
-  font-size: 18pt;
+  font-size: 18px;
   color: white;
 }
 
 .footer-content {
-  font-size: 13pt;
+  font-size: 13px;
   color: white;
   margin: 0;
-  line-height: 24pt;
+  line-height: 24px;
 }
 .footer-remark {
-  font-size: 12pt;
+  font-size: 12px;
   color: white;
-  line-height: 24pt;
+  line-height: 24px;
 }
 
 .address p > img {

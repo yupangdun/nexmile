@@ -69,14 +69,14 @@ export default {
   background-color: #7dbe4e;
 }
 .h1 {
-  font-size: 20pt;
+  font-size: 20px;
   margin: 0px;
   color: #0055aa;
 }
 .p {
   color: #666;
-  font-size: 12pt;
-  line-height: 20pt;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 li {
@@ -84,7 +84,7 @@ li {
 }
 
 li span {
-  line-height: 20pt;
+  line-height: 20px;
   color: #666;
 }
 </style>

@@ -54,15 +54,15 @@ export default {
 
 p {
   margin: 0px;
-  font-size: 21pt;
+  font-size: 21px;
   color: white;
-  line-height: 32pt;
+  line-height: 32px;
 }
 
 .p::after {
   font-family: "iconfont" !important;
   font-style: normal;
-  font-size: 24pt;
+  font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e61c";

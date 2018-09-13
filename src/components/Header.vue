@@ -28,7 +28,7 @@
   position: relative;
   top: -300px;
   color: white;
-  font-size: 40pt;
+  font-size: 40px;
   letter-spacing: 1px;
   margin: 0px;
   /* text-shadow: 1px 1px 1px #ffffff; */
@@ -38,7 +38,7 @@
   position: relative;
   top: -284px;
   color: white;
-  font-size: 21pt;
+  font-size: 21px;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0 20%;

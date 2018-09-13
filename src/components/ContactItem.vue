@@ -32,12 +32,12 @@ img {
 }
 .address {
   color: #7dbe41;
-  font-size: 21pt;
+  font-size: 21px;
 }
 
 .content {
   color: #4d4d4d;
-  font-size: 12pt;
+  font-size: 12px;
   margin: 0;
 }
 </style>

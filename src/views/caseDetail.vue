@@ -119,7 +119,7 @@ export default {
 }
 .case-base-div-2 > div:last-child p {
   text-align: center;
-  font-size: 14pt;
+  font-size: 14px;
   color: white;
   line-height: 40px;
   margin: 0;
@@ -127,27 +127,27 @@ export default {
 
 .p-div p {
   margin: 0;
-  line-height: 32pt;
+  line-height: 32px;
   padding: 10px 0;
   border-bottom: 1px solid #f2f2f2;
   color: #0055aa;
-  font-size: 13pt;
+  font-size: 13px;
   font-weight: 700;
 }
 
 .p1 {
-  font-size: 24pt;
+  font-size: 24px;
   color: #0055aa;
 }
 
 .p2 {
-  font-size: 14pt;
+  font-size: 14px;
   color: #808080;
 }
 
 .content {
   color: #4d4d4d;
-  font-size: 14pt;
+  font-size: 14px;
 }
 
 .category-footer {
@@ -161,10 +161,10 @@ export default {
 
 .category-footer p {
   color: white;
-  font-size: 21pt;
+  font-size: 21px;
 }
 .h-p {
-  font-size: 36pt;
+  font-size: 36px;
   color: #0055aa;
 }
 .el-dialog__body p {
@@ -184,14 +184,14 @@ export default {
   margin: 10px;
 }
 .el-dialog__body > div > div > p {
-  font-size: 13pt;
+  font-size: 13px;
   color: #4d4d4d;
   width: 160px;
 }
 .el-dialog__body > div > div > input,
 .el-dialog__body > div > div > textarea {
   flex: 1;
-  font-size: 13pt;
+  font-size: 13px;
   color: #4d4d4d;
 }
 
@@ -204,9 +204,9 @@ textarea {
 }
 .el-dialog__body > div > div:last-child p {
   text-align: center;
-  font-size: 14pt;
+  font-size: 14px;
   color: white;
-  line-height: 30pt;
+  line-height: 30px;
   background-color: #7dbe41;
 }
 </style>

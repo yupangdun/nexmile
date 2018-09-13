@@ -76,8 +76,8 @@ export default {
 
 .case-base p {
   color: #808080;
-  font-size: 21pt;
-  line-height: 36pt;
+  font-size: 21px;
+  line-height: 36px;
   margin: 4px;
 }
 

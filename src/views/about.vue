@@ -47,13 +47,13 @@ export default {
 }
 .a-h1 {
   color: #0055aa;
-  font-size: 32pt;
+  font-size: 32px;
   margin: 0 0 40px 0;
 }
 
 .a-h2 {
   color: #0055aa;
-  font-size: 21pt;
+  font-size: 21px;
   margin: 40px 0 0;
 }
 hr {
@@ -65,8 +65,8 @@ li {
   color: #0055aa;
 }
 .content {
-  font-size: 17pt;
-  line-height: 34pt;
+  font-size: 17px;
+  line-height: 34px;
   color: #4d4d4d;
   margin-top: 10px;
 }

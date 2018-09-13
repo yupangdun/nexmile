@@ -46,12 +46,12 @@ export default {
 }
 .item-p1 {
   color: #0055aa;
-  font-size: 26pt;
+  font-size: 26px;
 }
 
 .item-p2 {
   color: #4d4d4d;
-  font-size: 17pt;
-  line-height: 30pt;
+  font-size: 17px;
+  line-height: 30px;
 }
 </style>

@@ -55,19 +55,19 @@ export default {
   height: 125px;
 }
 .date-day {
-  font-size: 60pt;
+  font-size: 60px;
   color: #7dbe41;
   margin: 0;
 }
 
 .date-month {
-  font-size: 15pt;
+  font-size: 15px;
   color: #808080;
   margin: 0;
 }
 
 .name {
-  font-size: 20pt;
+  font-size: 20px;
   color: #4d4d4d;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -76,8 +76,8 @@ export default {
 }
 
 .content {
-  font-size: 14pt;
-  line-height: 24pt;
+  font-size: 14px;
+  line-height: 24px;
   color: #666;
   height: 80px;
 }

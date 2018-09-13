@@ -165,7 +165,7 @@ export default {
   flex-direction: row;
 }
 .p1 {
-  font-size: 30pt;
+  font-size: 30px;
   color: #4d4d4d;
   padding: 80px 0 60px;
   margin: 0;
@@ -182,7 +182,7 @@ export default {
   position: relative;
   top: -110px;
   color: white;
-  font-size: 30pt;
+  font-size: 30px;
   letter-spacing: 1px;
   margin: 0px;
   text-align: center;

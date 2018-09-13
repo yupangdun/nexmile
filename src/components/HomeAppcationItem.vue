@@ -57,33 +57,10 @@ export default {
 .item-base::before {
   font-family: "iconfont" !important;
   font-style: normal;
-  font-size: 30pt;
+  font-size: 30px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e61c";
-  color: white;
-  position: relative;
-  left: 210px;
-  top: 40px;
-  line-height: 0px;
-}
-
-.box {
-  padding: 20px;
-  height: 325px;
-  position: relative;
-  top: 200px;
-  transition: all 0.3s ease-out;
-  overflow: hidden;
-}
-
-.box:after {
-  font-family: "iconfont" !important;
-  font-style: normal;
-  font-size: 30pt;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e600";
   color: white;
   position: relative;
   left: 180px;
@@ -91,14 +68,38 @@ export default {
   line-height: 0px;
 }
 
+.box {
+  position: relative;
+  padding: 20px;
+  height: 325px;
+  position: relative;
+  top: 210px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.box:after {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  font-size: 30px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e600";
+  color: white;
+  position: absolute;
+  right: 20px;
+  bottom: 80px;
+  line-height: 0px;
+}
+
 .p1 {
   color: white;
-  font-size: 21pt;
+  font-size: 21px;
 }
 
 .content {
   color: white;
-  font-size: 15pt;
-  line-height: 24pt;
+  font-size: 15px;
+  line-height: 24px;
 }
 </style>

@@ -107,14 +107,14 @@ export default {
 }
 
 .header-p {
-  font-size: 32pt;
-  line-height: 80pt;
+  font-size: 32px;
+  line-height: 80px;
   color: #4d4d4d;
 }
 
 .header-p-2 {
-  font-size: 16pt;
-  line-height: 26pt;
+  font-size: 16px;
+  line-height: 26px;
   color: #808080;
 }
 
@@ -138,10 +138,10 @@ export default {
 
 .category-footer p {
   color: white;
-  font-size: 21pt;
+  font-size: 21px;
 }
 .h-p {
-  font-size: 36pt;
+  font-size: 36px;
   color: #0055aa;
 }
 .el-dialog__body p {
@@ -161,14 +161,14 @@ export default {
   margin: 10px;
 }
 .el-dialog__body > div > div > p {
-  font-size: 13pt;
+  font-size: 13px;
   color: #4d4d4d;
   width: 160px;
 }
 .el-dialog__body > div > div > input,
 .el-dialog__body > div > div > textarea {
   flex: 1;
-  font-size: 13pt;
+  font-size: 13px;
   color: #4d4d4d;
 }
 
@@ -181,9 +181,9 @@ textarea {
 }
 .el-dialog__body > div > div:last-child p {
   text-align: center;
-  font-size: 14pt;
+  font-size: 14px;
   color: white;
-  line-height: 30pt;
+  line-height: 30px;
   background-color: #7dbe41;
 }
 </style>

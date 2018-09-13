@@ -46,13 +46,13 @@ p {
   margin: 0;
 }
 .h1 {
-  font-size: 24pt;
+  font-size: 24px;
   color: #0055aa;
   margin-bottom: 0px;
 }
 .date {
   color: #4d4d4d;
-  font-size: 14pt;
+  font-size: 14px;
   margin: 10px 0 40px;
 }
 .img {
@@ -63,9 +63,9 @@ p {
 
 .content {
   padding: 40px 40px 40px 0;
-  font-size: 17pt;
+  font-size: 17px;
   color: #4d4d4d;
-  line-height: 30pt;
+  line-height: 30px;
 }
 
 .info-footer {

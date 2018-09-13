@@ -63,7 +63,7 @@ export default {
 .p::after {
   font-family: "iconfont" !important;
   font-style: normal;
-  font-size: 30pt;
+  font-size: 30px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e61c";
@@ -75,8 +75,8 @@ export default {
 }
 
 p {
-  font-size: 16pt;
-  line-height: 28pt;
+  font-size: 16px;
+  line-height: 28px;
   margin: 0;
   color: #4d4d4d;
 }

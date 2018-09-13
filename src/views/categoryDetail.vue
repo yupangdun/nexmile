@@ -84,8 +84,8 @@ li {
 }
 
 li span {
-  line-height: 26pt;
-  font-size: 13pt;
+  line-height: 26px;
+  font-size: 13px;
   color: #4d4d4d;
 }
 
@@ -95,13 +95,13 @@ li span {
 }
 
 .c-header-div .p1 {
-  font-size: 24pt;
+  font-size: 24px;
   color: #0055aa;
 }
 
 .c-header-div .p2 {
-  font-size: 13pt;
-  line-height: 26pt;
+  font-size: 13px;
+  line-height: 26px;
   color: #4d4d4d;
 }
 
