@@ -69,15 +69,21 @@ export default {
       this.$router.push({ name: 'CategoryItem', query: item })
     },
     post () {
-      console.log('============>', {
+      request.postEmail({
         name: this.name,
         company: this.company,
-        tel: this.tel,
+        telephone: this.tel,
         email: this.email,
-        country: this.country,
-        other: this.other
+        city: this.country,
+        information: this.other
+      }).then(res => {
+        if (res.data.status) {
+          this.outerVisible = false
+          alert('发送成功!')
+        } else {
+          alert(res.data.data)
+        }
       })
-      this.outerVisible = false
     }
   },
   created () {

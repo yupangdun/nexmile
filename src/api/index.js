@@ -8,5 +8,8 @@ export default {
   },
   getNews: function (pageNo = 0, pageSize = 15) {
     return axios.get(`/new/list?pageNo=${pageNo}&pageSize=${pageSize}`)
+  },
+  postEmail: function (body) {
+    return axios.post('/mile/contact', body)
   }
 }
