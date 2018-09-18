@@ -10,6 +10,6 @@ export default {
     return axios.get(`/new/list?pageNo=${pageNo}&pageSize=${pageSize}`)
   },
   postEmail: function (body) {
-    return axios.post('/mile/contact', body)
+    return axios.post('/email/contact', body)
   }
 }
