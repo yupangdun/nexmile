@@ -6,11 +6,17 @@
     </div>
 
     <div class="list">
-      <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click="click(item)"></emc-item>
+      <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click='outerVisible=true'></emc-item>
     </div>
-    <div class="category-footer" @click='outerVisible=true'>
+
+    <div class="more" @click='outerVisible=true'>
+      <div>
+        <p>查看更多解决方案</p>
+      </div>
+    </div>
+    <!-- <div class="category-footer" @click='outerVisible=true'>
       <p>查看更多解决方案 ></p>
-    </div>
+    </div> -->
 
     <el-dialog :visible.sync="outerVisible">
       <div>
@@ -127,10 +133,11 @@ export default {
 .list {
   display: flex;
   flex-direction: row;
-  width: 1050px;
+  justify-content: space-between;
+  width: 960px;
   margin: auto;
   flex-wrap: wrap;
-  padding: 70px 0 50px;
+  padding: 70px 0 32px;
 }
 
 .category-footer {
@@ -191,5 +198,25 @@ textarea {
   color: white;
   line-height: 30px;
   background-color: #7dbe41;
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 53px 0;
+}
+
+.more div {
+  width: 200px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7dbe4e;
+}
+.more p {
+  color: white;
+  margin: 0;
 }
 </style>
