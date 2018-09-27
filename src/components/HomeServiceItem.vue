@@ -3,11 +3,11 @@
     <div class="item-image-div">
       <img class="item-image" :src="image" :alt="title">
     </div>
-    <div class="margin">
-      <p class="p1">{{title}}</p>
-      <p class="p2">{{content}}</p>
+      <div class="margin">
+        <p class="p1">{{title}}</p>
+        <p class="p2">{{content}}</p>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -62,6 +62,7 @@ p {
 .p1 {
   font-size: 17px;
   color: #0055aa;
+  font-weight: 700;
 }
 .p2 {
   font-size: 15px;

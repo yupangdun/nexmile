@@ -6,35 +6,33 @@
       </div>
       <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
         <solution-item v-for="(item) in list" :key="item.icon" v-bind="item" @click="click(item)"> </solution-item>
-        <!-- <div v-for='item in (3-list.length)' :key="item" style="width:320px;height:460px;"></div> -->
         <solution-item-add v-for='item in (3-list.length)' :key="item"></solution-item-add>
       </div>
     </div>
     <div style="height:150px;margin:120px 0 0 0;">
       <img style="width: 100%;height:150px;" src="../assets/solution/首页-应用案例.jpg" />
-      <p class="img-p1">NEXMILE SOLUTIONS</p>
     </div>
-    <div style="background:white;">
-      <div class="info">
-        <p class='p1'>我们的服务</p>
-        <div class="home-row">
-          <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
+      <div style="background:white;">
+        <div class="info">
+          <p class='p1'>我们的服务</p>
+          <div class="home-row">
+            <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
+          </div>
         </div>
-      </div>
-      <hr class="border">
-      <div class="info ">
-        <p class='p1'>应用领域</p>
-        <div class="home-row">
-          <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item" @click="clickAPP"></appcation-item>
-        </div>
-        <div class="more" @click="moreAPP">
-          <div>
-            <p>查看更多解决方案</p>
+        <hr class="border">
+        <div class="info ">
+          <p class='p1'>应用领域</p>
+          <div class="home-row">
+            <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item" @click="clickAPP"></appcation-item>
+          </div>
+          <div class="more" @click="moreAPP">
+            <div>
+              <p>查看更多解决方案</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -54,34 +52,34 @@ export default {
       list: [],
       serviceList: [
         {
-          image: require('../assets/service/实验室服务.jpg'),
-          title: '实验室服务',
-          content: '从概念到全配方产品，我们专注于终端市场的专业实验室和专业人员可以为您的产品创造创新配方。'
-        },
-        {
           image: require('../assets/service/OEM服务.jpg'),
-          title: 'OEM服务',
-          content: '我们专注于了解合作伙伴的业务——从设计到制造再到交付——因此我们可以帮助您创建智能解决方案以推动成功。'
+          title: '材料的定制开发服务',
+          content: 'NEXMILE 专注于客户的产品应用和设计，我们可以帮助客户从源头配方设计材料以及测试到交付，协助创建解决方案到推动成功。'
         },
         {
-          image: require('../assets/service/定制包装和自有品牌服务.jpg'),
-          title: '定制包装和自有品牌服务',
-          content: '从特殊配方和标签设计到消费者和定制包装以及批量生产，我们提供多种选择以满足您的需求。'
+          image: require('../assets/service/材料选择支持.jpg'),
+          title: '更佳的材料选用支持',
+          content: 'NEXMILE 拥有业界知名的技术专家以及全球优质材料制造商，帮客户以更最适的成 本选择到更佳的应用需求材料。'
         },
         {
           image: require('../assets/service/供应链.jpg'),
+          title: '供应链服务 ',
+          content: 'NEXMILE 通过集中混合管理采购的方式，帮客户实现更佳快捷的供应链服务，省去客户的诸多管理成本和开发，特别适应于侧重于应用端和开发端客户。'
+        },
+        {
+          image: require('../assets/service/自定义混合.jpg'),
           title: '供应链',
           content: '凭借专为性能而构建的集中式网络和专有操作系统，我们可以优化您的装卸台之外的操作，从而提高您的业务成功率。'
         },
         {
-          image: require('../assets/service/材料选择支持.jpg'),
-          title: '材料选择支持',
-          content: '我们的技术支持专家拥有来自业界领先塑料制造商的数 千种产品，可帮助您确定最适合您应用需求的材料。'
+          image: require('../assets/service/定制包装和自有品牌服务.jpg'),
+          title: '功能参数大数据服务',
+          content: 'NEXMILE 拥有庞大的典型材料技术参数数据库，可以帮客户以最快的速度选到参数支持，从数字角度找到理想的材料作为设计参考。'
         },
         {
-          image: require('../assets/service/自定义混合.jpg'),
-          title: '自定义混合',
-          content: '凭借端到端的愿景，我们提供化学分析，产品测试，质量保证，技术支持等，以确保最高质量的混合化学产品。'
+          image: require('../assets/service/实验室服务.jpg'),
+          title: '更佳准确的实验室分析支持',
+          content: 'NEXMILE 和国内众多高校实验室以及第三方实验室进行了精确对接服务，为材料的前期开发产品功能物性和后期的产品稳定性提供了准确完善的理论验证和数据支持，相比自有实验室具有更客观的保证。'
         }
       ],
       appcationList: [
@@ -182,15 +180,6 @@ export default {
   margin: 0;
 }
 
-.img-p1 {
-  position: relative;
-  top: -110px;
-  color: white;
-  font-size: 30px;
-  letter-spacing: 1px;
-  margin: 0px;
-  text-align: center;
-}
 .img-p2 {
   position: relative;
   top: -264px;
@@ -259,6 +248,6 @@ export default {
 
 .border {
   margin: 0;
-  border-top: 2px solid #808080;
+  border-top: 0.25px solid #808080;
 }
 </style>

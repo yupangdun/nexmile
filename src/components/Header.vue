@@ -15,34 +15,40 @@
         </div>
       </div>
       <el-carousel arrow="never" trigger="click" :indicator-position='$store.state.index?"none":""'>
-        <el-carousel-item v-for="(item,index) in bannerList" indicator-position="none" :key="index" style="text-align: center;">
+        <el-carousel-item v-for="(item,index) in bannerList" indicator-position="relative" :key="index" style="text-align: center;">
           <img style="width: 100%;height: 100%;" :src="item.src" />
-          <p class="p1">{{item.h1}}</p>
-          <p class="p2">{{item.h2}}</p>
+          <div class="image-box">
+            <p class="p1">{{item.h1}}</p>
+            <p class="p2">{{item.h2}}</p>
+          </div>
         </el-carousel-item>
       </el-carousel>
     </div>
 </template>
 <style scoped>
+.image-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .p1 {
-  position: relative;
-  top: -300px;
   color: white;
   font-size: 40px;
   letter-spacing: 1px;
   margin: 0px;
-  /* text-shadow: 1px 1px 1px #ffffff; */
 }
 
 .p2 {
-  position: relative;
-  top: -284px;
   color: white;
   font-size: 21px;
   letter-spacing: 1px;
-  margin: 0px;
-  padding: 0 20%;
-  /* text-shadow: 1px 1px 1px #ffffff; */
+  width: 520px;
 }
 </style>
 <script>
@@ -61,30 +67,30 @@ export default {
     bannerList () {
       let list = [
         {
-          src: require('../assets/banner/banner3.jpg'),
-          h1: 'OUR VISION',
-          h2: '成为全球最佳的功能材料解决方案开拓者以及提供商'
-        },
-        {
-          src: require('../assets/banner/banner1.jpg'),
-          h1: '产品解决方案',
-          h2: '电磁屏蔽&兼容，射频吸收，无线充电解决方案'
-        },
-        {
-          src: require('../assets/banner/banner4.jpg'),
-          h1: '应用案例',
-          h2: '广泛应用于通讯设备、航空航天、医疗、电子、机械制造、轨道交通、新能源等行业'
-        },
-        {
-          src: require('../assets/banner/banner5.jpg'),
-          h1: '资讯',
-          h2: '在功能材料领域为客户探求更适的资源和创造更佳的解决方案'
-        },
-        {
-          src: require('../assets/banner/banner2.jpg'),
-          h1: '关于NEXMILE',
-          h2: '深入挖掘功能材料行业特点，以合理的价格，优质的产品，快速的响应，优质的供应链管理，提供给客户全新非凡的价值体验'
+          src: require('../assets/banner/home.jpg'),
+          h1: 'STEP TO THE NEXT',
+          h2: '昨天的历练，今天的努力，明天的探索，未来的思考我们永远在征途'
         }
+        // {
+        //   src: require('../assets/banner/banner1.jpg'),
+        //   h1: '产品解决方案',
+        //   h2: '电磁屏蔽&兼容，射频吸收，无线充电解决方案'
+        // },
+        // {
+        //   src: require('../assets/banner/banner4.jpg'),
+        //   h1: '应用案例',
+        //   h2: '广泛应用于通讯设备、航空航天、医疗、电子、机械制造、轨道交通、新能源等行业'
+        // },
+        // {
+        //   src: require('../assets/banner/banner5.jpg'),
+        //   h1: '资讯',
+        //   h2: '在功能材料领域为客户探求更适的资源和创造更佳的解决方案'
+        // },
+        // {
+        //   src: require('../assets/banner/banner2.jpg'),
+        //   h1: '关于NEXMILE',
+        //   h2: '深入挖掘功能材料行业特点，以合理的价格，优质的产品，快速的响应，优质的供应链管理，提供给客户全新非凡的价值体验'
+        // }
       ]
       if (this.$store.state.index) {
         list = [this.$store.getters.header]
