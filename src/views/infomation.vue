@@ -51,7 +51,7 @@ export default {
 }
 
 .base > div:first-child {
-  width: 1050px;
+  width: 960px;
   margin: auto;
 }
 .pagination {

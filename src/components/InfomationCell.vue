@@ -1,11 +1,9 @@
 <template>
   <div class="ibase" @click='$emit("click")'>
-    <div class="div-1">
-      <p class="date-day">{{getDay}}</p>
-      <p class="date-month">{{getDate}}</p>
-    </div>
+    <img :src="image">
     <div class="div-2">
       <p class="name">{{title}}</p>
+      <p class="date">{{getDate}}</p>
       <div class="content">
         <p>{{getContent}}</p>
       </div>
@@ -19,19 +17,17 @@ export default {
   props: {
     title: String,
     content: String,
-    date: String
+    date: String,
+    image: String
   },
   computed: {
-    getDay () {
-      return moment(this.date).format('DD')
-    },
     getDate () {
-      return moment(this.date).format('YYYY年MM月')
+      return moment(this.date).format('YYYY年MM月DD日')
     },
     getContent () {
       let str = this.content
       if (this.content && this.content.length > 60) {
-        str = this.content.substring(0, 60) + '...'
+        str = this.content.substring(0, 100) + '...'
       }
       return str
     }
@@ -42,43 +38,34 @@ export default {
 <style scoped>
 .ibase {
   display: flex;
-  height: 125px;
+  justify-content: space-between;
+  height: 200px;
+  width: 960px;
   margin: 0 0 70px 0;
 }
-.div-1 {
-  border-right: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 125px;
-}
-.date-day {
-  font-size: 60px;
-  color: #7dbe41;
-  margin: 0;
-}
-
-.date-month {
-  font-size: 15px;
-  color: #808080;
-  margin: 0;
+.ibase img {
+  width: 300px;
+  height: 100%;
 }
 
 .name {
-  font-size: 20px;
-  color: #4d4d4d;
+  font-size: 24px;
+  color: #0055aa;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   margin: 0;
 }
 
-.content {
+.date {
   font-size: 14px;
-  line-height: 24px;
-  color: #666;
+  color: #808080;
+}
+
+.content {
+  font-size: 17px;
+  line-height: 30px;
+  color: #4d4d4d;
   height: 80px;
 }
 
@@ -87,9 +74,8 @@ export default {
 }
 
 .div-2 {
-  flex: 1;
-  padding: 0 40px;
-  height: 125px;
+  width: 620px;
+  height: 100%;
   overflow: hidden;
 }
 </style>
