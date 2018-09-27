@@ -1,13 +1,13 @@
 <template>
   <div class="item-base" @click="$emit('click')">
     <div class="img">
-      <img :src="src" alt="">
+      <img :src="src" alt="" />
     </div>
-    <div class="p">
-      <p>{{label}}</p>
-      <p>解决方案</p>
+      <div class="p">
+        <p>{{label}}</p>
+        <p>解决方案</p>
+      </div>
     </div>
-  </div>
 </template>
 <script>
 export default {
@@ -26,6 +26,7 @@ export default {
 .item-base {
   width: 320px;
   height: 320px;
+  position: relative;
 }
 
 .item-base:hover .p {

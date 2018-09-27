@@ -6,7 +6,7 @@
     </el-header>
     <!-- 内容 -->
     <el-main>
-      <router-view/>
+      <router-view />
     </el-main>
     <!-- 底部 -->
     <el-footer class="footer">
@@ -22,18 +22,18 @@
           <p class="footer-content">
             <img src="./assets/页尾-1.png" />苏州工业园区唯新路58号 启迪人工智能产业园31#第二单元
           </p>
-          <p class="footer-content">
-            <img src="./assets/页尾-2.png" />0512-65927151
+            <p class="footer-content">
+              <img src="./assets/页尾-2.png" />0512-65927151
           </p>
-          <p class="footer-content">
-            <img src="./assets/页尾-3.png" />info@nex-mile.com
+              <p class="footer-content">
+                <img src="./assets/页尾-3.png" />info@nex-mile.com
           </p>
-          <div>
-            <img src="./assets/页尾-4.png">
-            <img src="./assets/页尾-5.png">
+                <div>
+                  <img src="./assets/页尾-4.png">
+                  <img src="./assets/页尾-5.png">
           </div>
+                </div>
         </div>
-      </div>
     </el-footer>
   </el-container>
 </template>
@@ -74,6 +74,7 @@ export default {
   left: 0;
   right: 0;
   background: white;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.1);
 }
 .header-div {
   height: 105px;

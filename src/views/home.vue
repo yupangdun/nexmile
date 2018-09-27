@@ -6,7 +6,8 @@
       </div>
       <div v-for='(list,i) in solutionList' :key='i' :class="[i?'other-list':'first-list']">
         <solution-item v-for="(item) in list" :key="item.icon" v-bind="item" @click="click(item)"> </solution-item>
-        <div v-for='item in (3-list.length)' :key="item" style="width:320px;height:460px;"></div>
+        <!-- <div v-for='item in (3-list.length)' :key="item" style="width:320px;height:460px;"></div> -->
+        <solution-item-add v-for='item in (3-list.length)' :key="item"></solution-item-add>
       </div>
     </div>
     <div style="height:150px;margin:120px 0 0 0;">
@@ -38,13 +39,16 @@
 
 <script>
 import SolutionItem from '../components/HomeSolutionItem'
+import SolutionItemAdd from '../components/HomeSolutionItemAdd'
+
 import InformationItem from '../components/InformationItem'
 import ServiceItem from '../components/HomeServiceItem'
 import AppcationItem from '../components/HomeAppcationItem'
+
 import request from '../api/index.js'
 
 export default {
-  components: { SolutionItem, InformationItem, ServiceItem, AppcationItem },
+  components: { SolutionItem, SolutionItemAdd, InformationItem, ServiceItem, AppcationItem },
   data () {
     return {
       list: [],
