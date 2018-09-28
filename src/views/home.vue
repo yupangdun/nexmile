@@ -9,8 +9,8 @@
         <solution-item-add v-for='item in (3-list.length)' :key="item"></solution-item-add>
       </div>
     </div>
-    <div style="height:150px;margin:120px 0 0 0;">
-      <img style="width: 100%;height:150px;" src="../assets/solution/首页-应用案例.jpg" />
+    <div style="height:150px;margin:120px 0 0 0;display:flex;justify-content:center;align-items:center;">
+      <img style="height:150px;" src="../assets/solution/首页-应用案例.jpg" />
     </div>
       <div style="background:white;">
         <div class="info">

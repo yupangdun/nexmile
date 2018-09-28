@@ -4,28 +4,30 @@
       <p>在即将全面到来的万物互联时代，以及人们对于智能电子设备以及功能设备的要求越来越高，同时对快速高质量消费需求的诉求，伴随系列的电子可靠性的挑战，功能材料犹如人的肌肉，血液或者眼睛一样起着非常关键的作用，如何快速选择对的材料来达到对应的整体可靠性要求将变得非常重要；NEXMILE致力于为客户提供最佳的柔性功能材料立体解决方案；为客户的产品功能可靠性提供全方位支持。</p>
     </div>
     <div class="about-img">
-      <img src="../assets/banner/about.jpg">
       <div>
-        <p>
-          制造基地网络
-        </p>
+        <img src="../assets/banner/about.jpg">
+      </div>
+        <div>
+          <p>
+            制造基地网络
+          </p>
+        </div>
+      </div>
+      <div class="about-common">
+        <p class='p1'>我们的服务</p>
+        <div class="home-row">
+          <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
+        </div>
+      </div>
+      <hr class="border">
+      <div class="about-common">
+        <p class="p1">我们的核心团队</p>
+        <div class="more">
+          <img src="../assets/service/OEM服务.jpg">
+          <p>NEXMILE 团队由国内外专家数十名组成，按不同的解决方案在不同的领域发挥专业的作用，研发团队和清华大学和中山大学以及中科院等形成长期的共同合作开发项目，为新产品等研发和未来基础功能材料等探索提供了高质量的技术护航，同时拥有供应链的管理专家和团队，为功能材料的一体化解决方案提供了有效保障，打造了材料领域的生态圈；并与全球领先的智能设备终端客户都保持着良好的合作关系，共同打造稳定可靠的材料系统保障。</p>
+        </div>
       </div>
     </div>
-    <div class="about-common">
-      <p class='p1'>我们的服务</p>
-      <div class="home-row">
-        <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
-      </div>
-    </div>
-    <hr class="border">
-    <div class="about-common">
-      <p class="p1">我们的核心团队</p>
-      <div class="more">
-        <img src="../assets/service/OEM服务.jpg">
-        <p>NEXMILE 团队由国内外专家数十名组成，按不同的解决方案在不同的领域发挥专业的作用，研发团队和清华大学和中山大学以及中科院等形成长期的共同合作开发项目，为新产品等研发和未来基础功能材料等探索提供了高质量的技术护航，同时拥有供应链的管理专家和团队，为功能材料的一体化解决方案提供了有效保障，打造了材料领域的生态圈；并与全球领先的智能设备终端客户都保持着良好的合作关系，共同打造稳定可靠的材料系统保障。</p>
-      </div>
-    </div>
-  </div>
 </template>
 <script>
 import ServiceItem from '../components/HomeServiceItem'
@@ -94,9 +96,11 @@ export default {
   width: 100%;
   height: 700px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .about-img img {
-  width: 100%;
   height: 100%;
 }
 
