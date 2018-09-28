@@ -16,11 +16,13 @@
       </div>
       <el-carousel arrow="never" trigger="click" :indicator-position='$store.state.index?"none":""'>
         <el-carousel-item v-for="(item,index) in bannerList" indicator-position="relative" :key="index" style="text-align: center;">
-          <img style="width: 100%;height: 100%;" :src="item.src" />
-          <div class="image-box">
-            <p class="p1">{{item.h1}}</p>
-            <p class="p2">{{item.h2}}</p>
+          <div class="image-div">
+            <img style="height: 100%;" :src="item.src" />
           </div>
+            <div class="image-box">
+              <p class="p1">{{item.h1}}</p>
+              <p class="p2">{{item.h2}}</p>
+            </div>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -49,6 +51,15 @@
   font-size: 21px;
   letter-spacing: 1px;
   width: 520px;
+}
+
+.image-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 </style>
 <script>
