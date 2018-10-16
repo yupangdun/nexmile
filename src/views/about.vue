@@ -7,27 +7,29 @@
       <div>
         <img src="../assets/banner/about.jpg">
       </div>
-        <div>
-          <p>
-            制造基地网络
-          </p>
-        </div>
+      <div>
+        <p>
+          制造基地网络
+        </p>
       </div>
+    </div>
+    <div style="background-color:#f2f2f2;">
       <div class="about-common">
         <p class='p1'>我们的服务</p>
         <div class="home-row">
           <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
         </div>
       </div>
-      <hr class="border">
-      <div class="about-common">
-        <p class="p1">我们的核心团队</p>
-        <div class="more">
-          <img src="../assets/service/OEM服务.jpg">
-          <p>NEXMILE 团队由国内外专家数十名组成，按不同的解决方案在不同的领域发挥专业的作用，研发团队和清华大学和中山大学以及中科院等形成长期的共同合作开发项目，为新产品等研发和未来基础功能材料等探索提供了高质量的技术护航，同时拥有供应链的管理专家和团队，为功能材料的一体化解决方案提供了有效保障，打造了材料领域的生态圈；并与全球领先的智能设备终端客户都保持着良好的合作关系，共同打造稳定可靠的材料系统保障。</p>
-        </div>
+    </div>
+    <!-- <hr class="border"> -->
+    <div class="about-common">
+      <p class="p1">我们的核心团队</p>
+      <div class="more">
+        <img src="../assets/service/OEM服务.jpg">
+        <p>NEXMILE 团队由国内外专家数十名组成，按不同的解决方案在不同的领域发挥专业的作用，研发团队和清华大学和中山大学以及中科院等形成长期的共同合作开发项目，为新产品等研发和未来基础功能材料等探索提供了高质量的技术护航，同时拥有供应链的管理专家和团队，为功能材料的一体化解决方案提供了有效保障，打造了材料领域的生态圈；并与全球领先的智能设备终端客户都保持着良好的合作关系，共同打造稳定可靠的材料系统保障。</p>
       </div>
     </div>
+  </div>
 </template>
 <script>
 import ServiceItem from '../components/HomeServiceItem'

@@ -9,30 +9,32 @@
         <solution-item-add v-for='item in (3-list.length)' :key="item"></solution-item-add>
       </div>
     </div>
-    <div style="height:150px;margin:120px 0 0 0;display:flex;justify-content:center;align-items:center;">
+    <div style="height:150px;margin:120px 0 0 0;display:flex;justify-content:center;align-items:center;overflow:hidden;">
       <img style="height:150px;" src="../assets/solution/首页-应用案例.jpg" />
     </div>
-      <div style="background:white;">
+    <div style="background:white;">
+      <div style="background-color:#f2f2f2;">
         <div class="info">
           <p class='p1'>我们的服务</p>
           <div class="home-row">
             <service-item v-for="(item,i) in serviceList" :key="i" v-bind="item" @click="click(item)"> </service-item>
           </div>
         </div>
-        <hr class="border">
-        <div class="info ">
-          <p class='p1'>应用领域</p>
-          <div class="home-row">
-            <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item" @click="clickAPP"></appcation-item>
-          </div>
-          <div class="more" @click="moreAPP">
-            <div>
-              <p>查看更多解决方案</p>
-            </div>
+      </div>
+      <!-- <hr class="border"> -->
+      <div class="info ">
+        <p class='p1'>应用领域</p>
+        <div class="home-row">
+          <appcation-item v-for="(item,i) in appcationList" :key="i" v-bind="item" @click="clickAPP"></appcation-item>
+        </div>
+        <div class="more" @click="moreAPP">
+          <div>
+            <p>查看更多解决方案</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>

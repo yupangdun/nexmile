@@ -1,55 +1,49 @@
 <template>
   <div style="background-color: #e8e8e8;">
-    <div class="emc-header">
-      <p class="header-p">{{item.name}}</p>
-      <p class="header-p-2">{{item.introduction}}</p>
-    </div>
-
-    <div class="list">
-      <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click='outerVisible=true'></emc-item>
-    </div>
-
-    <div class="more" @click='outerVisible=true'>
+    <div class='category-div'>
       <div>
-        <p>查看更多解决方案</p>
+        <div class="list">
+          <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click='outerVisible=true'></emc-item>
+        </div>
       </div>
-    </div>
-    <!-- <div class="category-footer" @click='outerVisible=true'>
-      <p>查看更多解决方案 ></p>
-    </div> -->
-
-    <el-dialog :visible.sync="outerVisible">
-      <div>
-        <p class="h-p">联系我们</p>
+      <!-- <div class="more" @click='outerVisible=true'>
         <div>
-          <p>称呼</p>
-          <input type="text" v-model="name">
+          <p>查看更多解决方案</p>
         </div>
+      </div>
+      <el-dialog :visible.sync="outerVisible">
         <div>
-          <p>公司</p>
-          <input type="text" v-model="company">
-        </div>
-        <div>
-          <p>电话</p>
-          <input type="text" v-model="tel">
-        </div>
-        <div>
-          <p>邮箱</p>
-          <input type="text" v-model="email">
-        </div>
-        <div>
-          <p>国家/城市</p>
-          <input type="text" v-model="country">
-        </div>
-        <div>
-          <p>请填写您的需求</p>
-          <textarea type="text" v-model="other" />
-        </div>
+          <p class="h-p">联系我们</p>
+          <div>
+            <p>称呼</p>
+            <input type="text" v-model="name">
+          </div>
+          <div>
+            <p>公司</p>
+            <input type="text" v-model="company">
+          </div>
+          <div>
+            <p>电话</p>
+            <input type="text" v-model="tel">
+          </div>
+          <div>
+            <p>邮箱</p>
+            <input type="text" v-model="email">
+          </div>
+          <div>
+            <p>国家/城市</p>
+            <input type="text" v-model="country">
+          </div>
+          <div>
+            <p>请填写您的需求</p>
+            <textarea type="text" v-model="other" />
+            </div>
         <div>
           <p @click="post">提交信息</p>
         </div>
       </div>
-    </el-dialog>
+    </el-dialog> -->
+    </div>
   </div>
 </template>
 <script>
@@ -106,6 +100,18 @@ export default {
 </script>
 
 <style scoped>
+.category-div {
+  background-image: url("../assets/banner/banner5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.category-div > div {
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
 .emc-header {
   background-color: white;
   margin: auto;
