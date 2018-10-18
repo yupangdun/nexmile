@@ -2,6 +2,12 @@
   <div style="background-color: #e8e8e8;">
     <div class='category-div'>
       <div>
+        <div style="width:100%;height:90px;background-color:#0055aa;">
+          <div style="width:960px;height:100%;margin:auto;display:flex;justify-content:space-between;align-items:center;">
+            <p style="font-size:30px;color:white;">{{item.name}}</p>
+            <img style="height:30px;" :src="item.icon" />
+          </div>
+        </div>
         <div class="list">
           <emc-item v-for="(item,i) in list" :first="!(i%2)" :label="item.name" :src="item.image" :subLabel="item.introduction" :key='i' @click='outerVisible=true'></emc-item>
         </div>
@@ -88,6 +94,7 @@ export default {
   },
   created () {
     this.item = this.$route.query
+    debugger
     request.getCategroy(this.item.id).then(res => {
       if (res.status === 200 && res.data.status === 200) {
         this.list = res.data.data
