@@ -3,6 +3,7 @@
     <img class="item-image" :src="image" :alt="name">
     <div class="absolute"></div>
     <img class="item-icon" :src="icon" :alt="name">
+    <img class="item-icon-hover" :src="icon_bg" :alt="name">
     <div class="p">
       <p>{{name}}</p>
       <p>解决方案</p>
@@ -15,6 +16,7 @@ export default {
   props: {
     image: String,
     icon: String,
+    icon_bg: String,
     name: String
   }
 }
@@ -29,6 +31,13 @@ export default {
 }
 .item-base:hover {
   background: #0055aa;
+}
+
+.item-base:hover .item-icon {
+  display: none;
+}
+.item-base:hover .item-icon-hover {
+  display: block;
 }
 
 .item-base:hover p,
@@ -55,6 +64,12 @@ export default {
 .item-icon {
   height: 24px;
   margin: 26px 20px;
+}
+
+.item-icon-hover {
+  height: 24px;
+  margin: 26px 20px;
+  display: none;
 }
 .p {
   padding: 18px 20px 0;

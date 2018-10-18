@@ -5,7 +5,7 @@
         <div style="width:100%;height:90px;background-color:#0055aa;">
           <div style="width:960px;height:100%;margin:auto;display:flex;justify-content:space-between;align-items:center;">
             <p style="font-size:30px;color:white;">{{item.name}}</p>
-            <img style="height:30px;" :src="item.icon" />
+            <img style="height:30px;" :src="item.icon_bg" />
           </div>
         </div>
         <div class="list">
@@ -94,7 +94,6 @@ export default {
   },
   created () {
     this.item = this.$route.query
-    debugger
     request.getCategroy(this.item.id).then(res => {
       if (res.status === 200 && res.data.status === 200) {
         this.list = res.data.data
